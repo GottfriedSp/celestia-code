@@ -1,0 +1,82 @@
+Celestia To Do List
+-------------------
+
+USER INTERFACE
+* More star label modes--nearest stars, brightest stars
+* Make picking more intelligent
+  * Make picking more accurate for non-spherical bodies
+  * Make galaxies pickable
+* Views of planet and satellite orbits
+  * Add satellite orbits
+  * User control over which orbits should be displayed
+* Next/prev body commands
+* Add preferences for text color to config file
+* Dialog box for displaying detailed information about a star or planet
+* Create a manual
+* Star browser: flag stars with planetary systems
+* Solar system browser: add icons
+* Popup H-R diagram window
+* Use a slider widget for controlling ambient light level
+
+VISUALS
+* Shadows from rings on planet
+* Get a real texture map for Eros
+* Non-Lambertian illumination functions for planets
+* Add haloes around bright planets similar to the ones around stars
+* Comets with dust and ion tails
+* Add some deep sky objects--planetary nebula, supernova remnants, etc.
+* Procedural textures for extrasolar planets
+* Bump mapped cloud layers
+* Make atmospheres work for oblate planets
+* Render galaxies with colors--bluish spiral arms, yellowish center
+* Render dark dust bands in galaxies
+* Add textures to ISS and Mir models
+
+POLISH
+* Tutorial mode
+* Add a flashy intro screen
+* Preload some textures to avoid loading delay
+* Use Greek letters in Bayer designations
+* Make the demo loop
+* Add a demo mode that visits random targets
+* Compute accurate altitude above oblate planets/stars using point-to-ellipsoid
+  distance function.
+
+SIMULATION ACCURACY
+* Fix apparent magnitude calculation for planets
+* Figure out a way to estimate gas giant's radius given its mass
+* Obtain and read spacecraft ephemerii, so Galileo, Cassini, etc. appear in the proper places
+* Use a better estimate for star radius
+* Make some attempt at calculating stellar rotation rates
+* Model the irregular rotations of objects like Toutatis and Hyperion
+* Double star systems: make the stars actually orbit each other
+
+BUGS
+* Find out why picking sometimes stops working, apparently after orbiting (fixed?)
+* Fix wobbling of planet shadow on rings when time is accelerated
+* Investigate possible visual anomalies with ring shadows on ATI Rage cards
+
+OPTIMIZATION
+* Add option to force 16-bit textures
+* Add low resolution texture package
+
+CODE
+* Make parser more robust (and fix that EOF problem)
+* Change random printfs to DPRINTFs and Logs
+* Finish assert-ing the code
+
+PORTING
+* Bring UNIX UI up to level of Windows UI
+  * Implement solar system and star browsers
+  * Context menus for both GLUT and Gtk versions
+* MacOS port
+* Make bump mapping and other GL extension stuff work under UNIX
+
+MISC
+* Create more powerful scripting system
+* Make solar system creation applet, for adding hypothetical systems to
+  a Celestia universe
+* Allow lists of bodies from different .ssc files to be incorporated into
+  the same planetary system
+* Switch to UNICODE
+* Internationalization

@@ -1,0 +1,1399 @@
+# Data for our solar system.
+
+"Mercury" "Sol"
+{
+	Texture "mercury.jpg"
+	BumpMap "mercurybump.jpg"
+	BumpHeight 2.5
+	Radius 2440
+
+	CustomOrbit "mercury"
+	EllipticalOrbit {
+	Period            0.2408
+	SemiMajorAxis     0.3871
+	Eccentricity      0.2056
+	Inclination       7.0049
+	AscendingNode    48.33167
+	LongOfPericenter 77.456
+        MeanLongitude   252.251
+	}
+
+	RotationPeriod 1047.509
+	Obliquity         7.01
+	LongOfRotationAxis 228.31
+
+	Albedo            0.06
+}
+
+"Venus" "Sol"
+{
+	Texture "venus.jpg"
+	# BumpMap "venusbump.jpg"
+	HazeColor [ 0.5 0.35 0.2 ]
+	HazeDensity 0.35
+	Radius 6052
+
+	Atmosphere {
+		Height 60
+		Lower [ 0.8 0.8 0.5 ]
+		Upper [ 0.6 0.6 0.6 ]
+		Sky [ 0.8 0.8 0.5 ]
+	}
+
+	CustomOrbit "venus"
+	EllipticalOrbit {
+		Period            0.6152
+		SemiMajorAxis     0.7233
+		Eccentricity      0.0068
+		Inclination       3.3947
+		AscendingNode     76.681
+		LongOfPericenter 131.533
+	        MeanLongitude    181.979
+	}
+
+	RotationPeriod  5832.444
+	Obliquity       177.4
+	LongOfRotationAxis 302.07
+
+	Albedo            0.77
+}
+
+"Earth" "Sol"
+{
+	Texture "earth.png"
+	# Texture "earth8k.dds"
+	NightTexture "earthnight.jpg"
+	# CompressTexture true
+	Color [ 0.85 0.85 1.0 ]
+	SpecularColor [ 0.5 0.5 0.55 ]
+	SpecularPower 25.0
+	HazeColor [ 1 1 1 ]
+	HazeDensity 0.3
+	Radius 6378
+	# Oblateness 0.003
+
+	Atmosphere {
+		Height 60
+		Lower [ 0.5 0.5 0.65 ]
+		Upper [ 0.3 0.3 0.6 ]
+		Sky [ 0.3 0.6 0.9 ]
+		CloudHeight 7
+		CloudSpeed 65
+		CloudMap "earth-clouds.png"
+	}
+
+	CustomOrbit "vsop87-earth"
+	EllipticalOrbit {	
+		Period            1.0000
+		SemiMajorAxis     1.0000
+		Eccentricity      0.0167
+		Inclination       0.0001
+		AscendingNode   348.739
+		LongOfPericenter 102.947
+	        MeanLongitude   100.464
+	}
+
+	RotationPeriod   23.9344694 # 23.93419
+	RotationOffset   280.5    # offset at default epoch J2000
+	Obliquity        -23.45
+	Albedo            0.30
+}
+
+"Moon" "Sol/Earth"
+{
+	Texture "moon.jpg"
+	BumpMap "moonbump1k.jpg"
+	# Texture "moon4k.dds"
+	BumpHeight 0.7
+	Radius   1737.53
+	Oblateness 0.002
+
+	CustomOrbit "moon"
+	EllipticalOrbit {
+		Period           27.321661
+		SemiMajorAxis    384400
+		Eccentricity     0.054900
+		Inclination      5.15
+	}
+
+	RotationOffset 		43
+
+	Albedo           0.12
+}
+
+"Mir" "Sol/Earth"
+{
+	Class "spacecraft"
+	Mesh "mir.3ds"
+	Radius 0.015      # Mir is about 30 meters long
+
+	# Assuming these elements to be constant isn't accurate . . .
+	# Celestia really needs to support better orbit models.
+	EllipticalOrbit {
+		Period            0.06415338
+		SemiMajorAxis  6769
+		Eccentricity      0.0000831
+		Inclination      51.6461
+		AscendingNode    83.8459
+		ArgOfPericenter 296.4901
+		MeanAnomaly      63.6005
+	}
+
+	Albedo 	      0.10
+}
+
+"ISS" "Sol/Earth"
+{
+	Class "spacecraft"
+	Mesh "iss.3ds"
+	Radius 0.015
+
+	EllipticalOrbit {
+		Period          0.064176392
+		SemiMajorAxis   6767
+		Eccentricity    0.0016886
+		Inclination      51.5684
+		AscendingNode   343.1518
+		ArgOfPericenter 346.2476
+		MeanAnomaly      13.8216
+		Epoch           2452028.18381755
+	}
+
+	Albedo        0.10
+}
+
+"Hubble" "Sol/Earth"
+{
+	Class "spacecraft"
+	Mesh "hubble.3ds"
+	Radius 0.015
+
+	EllipticalOrbit {
+		Period          0.06903
+		SemiMajorAxis   6767
+		Eccentricity    0.0012082
+		Inclination      28.4675
+		AscendingNode    51.0100
+		ArgOfPericenter  27.0378
+		MeanAnomaly     333.0836
+		Epoch           2452028.18381755
+	}
+
+	Albedo       0.10
+}
+
+"Mars" "Sol"
+{
+	Texture "mars.jpg"
+	# Texture "mars4k.dds"
+	BumpMap "marsbump1k.jpg"
+	BumpHeight 2.5
+	Color   [ 1 0.75 0.7 ]
+	HazeColor [ 1 1 1 ]
+	HazeDensity 0.45
+	Radius 3394
+	# Oblateness 0.006
+
+	Atmosphere {
+		Height 30
+		Lower [ 0.8 0.6 0.6 ]
+		Upper [ 0.7 0.3 0.3 ]
+		Sky [ 0.83 0.75 0.65 ]
+	}
+
+	CustomOrbit "mars"
+	EllipticalOrbit
+	{
+	Period            1.8809
+	SemiMajorAxis     1.5237
+	Eccentricity      0.0934
+	Inclination       1.8506
+	AscendingNode     49.479
+	LongOfPericenter 336.041
+        MeanLongitude    355.453
+	}
+
+	RotationPeriod    24.622962
+	Obliquity         23.98
+	LongOfRotationAxis 262.78
+
+	Albedo            0.150
+}
+
+"Phobos" "Sol/Mars"
+{
+	Mesh "phobos.3ds"
+	Texture "phobos.jpg"
+	# BumpMap "phobosbump.jpg"
+	# BumpHeight 5
+	Radius 11
+
+	EllipticalOrbit
+	{
+	Period         0.318910
+	SemiMajorAxis  9377.2
+	Eccentricity   0.0151
+	Inclination    1.082
+	MeanAnomaly    50
+	}
+
+	Albedo         0.07
+}
+
+"Deimos" "Sol/Mars"
+{
+	Mesh "deimos.3ds"
+	Texture "deimos.jpg"
+	Radius 6
+
+	EllipticalOrbit
+	{
+	Period         1.262441
+	SemiMajorAxis  23463.2
+	Eccentricity   0.00033
+	Inclination    1.791
+	MeanAnomaly    150
+	}
+
+	Albedo         0.08
+}
+
+"Jupiter" "Sol"
+{
+	Texture "jupiter.jpg"
+	HazeColor [ 0.4 0.45 0.5 ]
+	HazeDensity 0.3
+
+	Radius 71398
+	Oblateness 0.064
+
+	CustomOrbit "jupiter"
+	EllipticalOrbit
+	{
+	Period           11.8622
+	SemiMajorAxis     5.2034
+	Eccentricity      0.0484
+	Inclination       1.3053
+	AscendingNode   100.556
+	LongOfPericenter 14.7539
+        MeanLongitude    34.404
+	}
+
+	RotationPeriod    9.92425
+	Obliquity         3.08
+	LongOfRotationAxis 0 # Not correct, but necessary with current 
+                             # calculations of satellite positions
+	                     # old values: 337.68, 157.68
+	Albedo            0.51
+}
+
+"Amalthea" "Sol/Jupiter"
+{
+	Texture "asteroid.jpg"
+	BlendTexture true
+	Color   [ 0.5 0.12 0.16 ]
+	Mesh "amalthea.3ds"
+	Radius    124
+
+	EllipticalOrbit
+	{
+	Period          0.498179
+	SemiMajorAxis   181300
+	Eccentricity    0.003
+	Inclination     0.40
+	MeanAnomaly     210
+	}
+
+	Albedo          0.06
+}
+
+"Io" "Sol/Jupiter"
+{
+	Texture "io.jpg"
+	# Texture "io2k.dds"
+	Radius   1821
+
+	CustomOrbit "io"
+	EllipticalOrbit
+	{
+	Epoch 2443000.00038375
+	Period         1.769138
+	SemiMajorAxis  421600
+	Eccentricity   0.0041
+	Inclination    0.040
+	AscendingNode    312.981
+	LongOfPericenter  97.735
+	MeanLongitude    106.724
+	}
+
+	Albedo         0.61
+}
+
+"Europa" "Sol/Jupiter"
+{
+	Texture "europa.jpg"
+	Radius   1565
+
+	CustomOrbit "europa"
+	EllipticalOrbit
+	{
+	Epoch 2443000.00038375
+	Period         3.551810
+	SemiMajorAxis  670900
+	Eccentricity   0.0101
+	Inclination    0.470
+	AscendingNode    101.087
+	LongOfPericenter 155.512
+	MeanLongitude    176.377
+	}
+
+	Albedo         0.64
+}
+
+"Ganymede" "Sol/Jupiter"
+{
+	Texture "ganymede.jpg"
+	Radius   2634
+
+	CustomOrbit "ganymede"
+	EllipticalOrbit
+	{
+	Epoch 2443000.00038375
+	Period         7.154553
+	SemiMajorAxis  1070000
+	Eccentricity   0.0015
+	Inclination    0.195
+	AscendingNode    119.841
+	LongOfPericenter 188.831
+	MeanLongitude    121.206
+	}
+
+	Albedo         0.42
+}
+
+"Callisto" "Sol/Jupiter"
+{
+	Texture "callisto.jpg"
+	Radius   2403
+
+	CustomOrbit "callisto"
+	EllipticalOrbit
+	{
+	Epoch 2443000.00038375
+	Period        16.689018
+	SemiMajorAxis  1883000
+	Eccentricity   0.007
+	Inclination    0.281
+	AscendingNode    323.265
+	LongOfPericenter 335.933
+	MeanLongitude     85.091
+	}
+
+	Albedo         0.20
+}
+
+"Galileo" "Sol/Jupiter"
+{
+	Class "spacecraft"
+	Mesh "galileo.3ds"
+	Radius   0.01
+
+	EllipticalOrbit
+	{
+	Period        64.4068
+	SemiMajorAxis  4632880
+	Eccentricity   0.831774
+	Inclination    4.213
+	AscendingNode  59.562
+	ArgOfPericenter 97.224
+	TrueAnomaly    -66.619
+	}
+
+	Albedo         0.50
+}
+
+"Saturn" "Sol"
+{
+	Texture "saturn.jpg"
+	Color [ 1.0 1.0 0.85 ]
+	HazeColor [ 0.0 0.0 1 ]
+	HazeDensity 0.25
+	Radius 60330
+	Oblateness 0.1076
+
+	CustomOrbit "saturn"
+	EllipticalOrbit
+	{
+	Period           29.4577
+	SemiMajorAxis     9.5371
+	Eccentricity      0.0542
+	Inclination       2.4845
+	AscendingNode   113.715
+	LongOfPericenter 92.432
+        MeanLongitude    49.944
+	}
+
+	RotationPeriod      10.65622
+	Obliquity           28.052 # old value: 26.73
+	LongOfRotationAxis  168
+
+	Albedo            0.50
+
+	Rings {
+		Inner   74658
+		Outer  140000
+		Texture "saturn-rings.png"
+
+		# Bjorn Jonsson <http://www.mmedia.is/~bjj> recommends this
+		# color for rendering Saturn's rings.  No idea if it's right,
+		# but it looks nice
+		Color  [ 1.0 0.88 0.82 ]
+	}
+}
+
+"Mimas" "Sol/Saturn"
+{
+	Texture "mimas.jpg"
+	# Texture "white.jpg"
+	# BumpMap "mimasbump.jpg"
+	# BumpHeight 10.0
+	Color [ 0.75 0.63 0.58 ]
+	BlendTexture true
+	Radius    199
+
+	CustomOrbit "mimas"
+	EllipticalOrbit
+	{
+	Period         0.9424218
+	SemiMajorAxis  185520
+	Eccentricity   0.0202
+	Inclination    1.53
+	MeanAnomaly    23
+	}
+
+	Albedo         0.5
+}
+
+"Enceladus" "Sol/Saturn"
+{
+	Texture "asteroid.jpg"
+	Radius     249
+
+	CustomOrbit "enceladus"
+	EllipticalOrbit
+	{
+	Period         1.370218
+	SemiMajorAxis  238020
+	Eccentricity   0.0045
+	Inclination    0.02
+	MeanAnomaly    215
+	}
+
+	Albedo         0.99
+}
+
+"Tethys" "Sol/Saturn"
+{
+	Texture "tethys.jpg"
+	Radius     530
+
+	CustomOrbit "tethys"
+	EllipticalOrbit
+	{
+	Period         1.887802
+	SemiMajorAxis  294660
+	Eccentricity   0.0
+	Inclination    1.09
+	MeanAnomaly    98
+	}
+
+	Albedo         0.9
+}
+
+"Dione" "Sol/Saturn"
+{
+	Texture "dione.jpg"
+	Radius     560
+
+	CustomOrbit "dione"
+	EllipticalOrbit
+	{
+	Period         2.736915
+	SemiMajorAxis  377400
+	Eccentricity   0.0022
+	Inclination    0.02
+	MeanAnomaly    310
+	}
+
+	Albedo         0.7
+}
+
+"Rhea" "Sol/Saturn"
+{
+	Texture "rhea.jpg"
+	Radius     764
+
+	CustomOrbit "rhea"
+	EllipticalOrbit
+	{
+	Period         4.517500
+	SemiMajorAxis  527040
+	Eccentricity   0.0010
+	Inclination    0.35
+	MeanAnomaly    190
+	}
+
+	Albedo         0.7
+}
+
+"Titan" "Sol/Saturn"
+{
+	Texture "titan.jpg"
+	Color [ 1.0 0.9 0.75 ]
+	HazeColor [ 0.2 0.5 1 ]
+	HazeDensity 1
+	Radius   2575
+
+	Atmosphere {
+		Height 60
+		Lower [ 0.8 0.4 0.1 ]
+		Upper [ 0.0 0.0 0.9 ]
+		Sky [ 0.8 0.4 0.1 ]
+	}
+
+	CustomOrbit "titan"
+	EllipticalOrbit
+	{
+	Period        15.945421
+	SemiMajorAxis  1221850
+	Eccentricity   0.0292
+	Inclination    0.33
+	MeanAnomaly    120
+	}
+
+	Albedo         0.21
+}
+
+"Hyperion" "Sol/Saturn"
+{
+	Mesh "hyperion.3ds"
+	Texture "asteroid.jpg"
+	Radius   205
+
+	CustomOrbit "hyperion"
+	EllipticalOrbit
+	{
+	Period        21.276609
+	SemiMajorAxis  1481100
+	Eccentricity   0.1042
+	Inclination    0.43
+	MeanAnomaly    350
+	}
+
+	# The rotation of Hyperion is chaotic; we don't attempt to model
+	# the rotation exactly, but instead use non-zero precession rate to
+	# make the rotation appear somewhat irregular.
+	Obliquity       25
+	RotationPeriod  336 # 13 days
+	PrecessionRate  15.65 # 23 days
+
+	Albedo         0.3
+}
+
+"Iapetus" "Sol/Saturn"
+{
+	Texture "iapetus.jpg"
+	Radius     718
+
+	CustomOrbit "iapetus"
+	EllipticalOrbit
+	{
+	Period         79.330183
+	SemiMajorAxis  3561300
+	Eccentricity   0.0283
+	Inclination    7.52
+	MeanAnomaly    245
+	}
+
+	Albedo         0.2
+}
+
+"Phoebe" "Sol/Saturn"
+{
+	Mesh "roughsphere.cms"
+	Texture "asteroid.jpg"
+	Radius     110
+
+	CustomOrbit "phoebe"
+	EllipticalOrbit
+	{
+	Epoch          2447892.5
+	Period         548.2122790
+	SemiMajorAxis  12944346
+	Eccentricity   0.16435
+	Inclination    174.751
+	LongOfPericenter 203.958
+	MeanLongitude  390.742
+	AscendingNode  233.037
+	}
+
+	RotationPeriod 9.6
+
+	Albedo         0.05
+}
+
+
+"Uranus" "Sol"
+{
+	Texture "uranus.jpg"
+	Color [ 0.75 0.85 1.0 ]
+	HazeColor [ 0.5 0.8 1.0 ]
+	HazeDensity 0.2
+	Radius 26200
+	Oblateness 0.024
+
+	CustomOrbit "uranus"
+	EllipticalOrbit
+	{
+	Period           84.0139
+	SemiMajorAxis    19.1913
+	Eccentricity      0.0472
+	Inclination       0.7699
+	AscendingNode     74.230
+	LongOfPericenter 170.964
+        MeanLongitude    313.232
+	}
+
+	RotationPeriod   17.24
+	Obliquity        97.92
+	LongOfRotationAxis 167.76
+
+	Albedo            0.66
+
+	Rings {
+		Inner  41800
+		Outer  51149
+		Texture "uranus-rings.png"
+	}
+}
+
+"Miranda" "Sol/Uranus"
+{
+	Texture "miranda.jpg"
+	Radius   235
+
+	CustomOrbit "miranda"
+	EllipticalOrbit
+	{
+	Period         1.413
+	SemiMajorAxis  129800
+	Eccentricity   0.0027
+	Inclination    4.22
+	MeanAnomaly    120
+	}
+}
+
+"Ariel" "Sol/Uranus"
+{
+	Texture "ariel.jpg"
+	Radius   576
+
+	CustomOrbit "ariel"
+	EllipticalOrbit
+	{
+	Period         2.520
+	SemiMajorAxis  191200
+	Eccentricity   0.0034
+	Inclination    0.31
+	MeanAnomaly    56
+	}
+}
+
+"Umbriel" "Sol/Uranus"
+{
+	Texture "umbriel.jpg"
+	Radius   585
+
+	CustomOrbit "umbriel"
+	EllipticalOrbit
+	{
+	Period         4.144
+	SemiMajorAxis  266000
+	Eccentricity   0.0050
+	Inclination    0.36
+	MeanAnomaly    280
+	}
+}
+
+"Titania" "Sol/Uranus"
+{
+	Texture "titania.jpg"
+	Radius   789
+
+	CustomOrbit "titania"
+	EllipticalOrbit
+	{
+	Period         8.706
+	SemiMajorAxis  435800
+	Eccentricity   0.0022
+	Inclination    0.10
+	MeanAnomaly    30
+	}
+}
+
+"Oberon" "Sol/Uranus"
+{
+	Texture "oberon.jpg"
+	Radius   761
+
+	CustomOrbit "oberon"
+	EllipticalOrbit
+	{
+	Period        13.463
+	SemiMajorAxis  583600
+	Eccentricity   0.0008
+	Inclination    0.10
+	MeanAnomaly    150
+	}
+}
+
+
+"Neptune" "Sol"
+{
+	Texture "neptune.jpg"
+	Color [ 0.75 0.75 1.0 ]
+	HazeColor [ 0.6 1 0.75 ]
+	HazeDensity 0.35
+	Radius 25225
+	Oblateness 0.027
+
+	CustomOrbit "neptune"
+	EllipticalOrbit
+	{
+	Period           164.793
+	SemiMajorAxis     30.0690
+	Eccentricity      0.0086
+	Inclination       1.7692
+	AscendingNode   131.722
+	LongOfPericenter 44.971
+        MeanLongitude   304.880
+	}
+
+	RotationPeriod   16.11
+	Obliquity        28.03
+	LongOfRotationAxis 49.235
+
+	Albedo            0.62
+}
+
+"Proteus" "Sol/Neptune"
+{
+	Mesh "proteus.3ds"
+	Texture "asteroid.jpg"
+	Radius   218
+
+	EllipticalOrbit
+	{
+	Period         1.122315
+	SemiMajorAxis  117647
+	Eccentricity   0.000
+	Inclination    0.55
+	MeanAnomaly    310
+	}
+
+	Albedo         0.2
+}
+
+"Triton" "Sol/Neptune"
+{
+	Texture "triton.jpg"
+	Radius   1353
+
+	Atmosphere {
+		Height 1
+		Lower [ 0.5 0.5 0.5 ]
+		Upper [ 0.5 0.5 0.5 ]
+		Sky [ 0.0 0.0 0.0 ]
+	}
+
+	EllipticalOrbit
+	{
+	Period         5.876854
+	SemiMajorAxis  354760
+	Eccentricity   0.00004
+	Inclination    156.834
+	MeanAnomaly    120
+	}
+
+	Albedo         0.7
+}
+
+"Nereid" "Sol/Neptune"
+{
+	Mesh "asteroid.cms"
+	Texture "asteroid.jpg"
+	Radius   170
+
+	EllipticalOrbit
+	{
+	Period         360.13619
+	SemiMajorAxis  5513400
+	Eccentricity   0.7512
+	Inclination    7.23
+	MeanAnomaly    185
+	}
+}
+
+
+"Pluto" "Sol"
+{
+	Texture "pluto.jpg"
+	BumpMap "plutobump1k.jpg"
+	BumpHeight 2.5
+	Radius 1137
+
+	CustomOrbit "pluto"
+	EllipticalOrbit
+	{
+	Period            248.54
+	SemiMajorAxis     39.48168677
+	Eccentricity       0.24880766
+	Inclination       17.14175
+	AscendingNode    110.30347
+	LongOfPericenter 224.06776
+        MeanLongitude    238.92881
+	}
+
+	RotationPeriod  153.29
+	Obliquity       122.53
+	Albedo            0.3
+}
+
+"Charon" "Sol/Pluto"
+{
+	Texture "charon.jpg"
+	Radius   593
+
+	EllipticalOrbit
+	{
+	Period         6.387083
+	SemiMajorAxis  19636
+	Eccentricity   0.0076
+	Inclination    0.0 # 96.163 degrees relative to ecliptic
+	MeanAnomaly    120
+	}
+	
+	Albedo         0.3
+}
+
+
+# A few asteroids for fun . . .
+"Ceres" "Sol"
+{
+	Class "asteroid"
+	Texture "asteroid.jpg"
+	Radius 456
+
+	EllipticalOrbit
+	{
+	Epoch      2452600.5
+	Period            4.60014
+	SemiMajorAxis     2.7660
+	Eccentricity      0.0793
+	Inclination      10.584
+	AscendingNode    80.483
+	ArgOfPericenter  74.043
+        MeanAnomaly     232.067
+	}
+
+	RotationPeriod    9.075
+}
+
+"Pallas" "Sol"
+{
+	Class "asteroid"
+	Texture "asteroid.jpg"
+	Radius 260
+
+	EllipticalOrbit
+	{
+	Epoch      2452600.5
+	Period            4.61868
+	SemiMajorAxis     2.7733
+	Eccentricity      0.2300
+	Inclination      34.846
+	AscendingNode   173.166
+	ArgOfPericenter 310.423
+        MeanAnomaly     218.057
+	}
+
+	RotationPeriod    7.811
+}
+
+"Juno" "Sol"
+{
+	Class "asteroid"
+	Texture "asteroid.jpg"
+	Radius 120
+
+	EllipticalOrbit
+	{
+	Epoch      2452600.5
+	Period            4.35540
+	SemiMajorAxis     2.6669
+	Eccentricity      0.2589
+	Inclination      12.972
+	AscendingNode   170.133
+	ArgOfPericenter 247.948
+        MeanAnomaly     119.146
+	}
+
+	RotationPeriod    7.811
+}
+
+"Vesta" "Sol"
+{
+	Class "asteroid"
+	Mesh   "vesta.3ds"
+	Texture "asteroid.jpg"
+	Radius 265
+
+	EllipticalOrbit
+	{
+	Epoch       2452000.5
+	Period            3.62729
+	SemiMajorAxis     2.3670775
+	Eccentricity      0.089753
+	Inclination       7.1346
+	AscendingNode   103.9510
+	ArgOfPericenter 149.4585
+        MeanAnomaly     104.980
+	}
+
+	RotationPeriod    5.342
+}
+
+"Gaspra" "Sol"
+{
+	Class "asteroid"
+	Mesh "gaspra.3ds"
+	Texture "asteroid.jpg"
+	Color   [ 0.52 0.47 0.42 ]
+	BlendTexture true
+
+	Radius 9.5
+
+	EllipticalOrbit
+	{
+	Epoch           2452332.5
+	Period          3.284564
+	SemiMajorAxis   2.2096245
+	Eccentricity    0.1730324
+	Inclination     4.10285
+	AscendingNode   253.31108
+	ArgOfPericenter 129.42680
+	MeanAnomaly     353.04048
+	}
+
+	RotationPeriod 7.042
+	Albedo 0.1
+}
+
+"Ida" "Sol"
+{
+	Class "asteroid"
+	Mesh   "ida.3ds"
+	Texture "asteroid.jpg"
+	Radius 45
+
+	EllipticalOrbit
+	{
+	Period            4.84
+	SemiMajorAxis     2.861
+	Eccentricity      0.0451
+	Inclination       1.14
+	AscendingNode   324.419
+	ArgOfPericenter 112.419
+        MeanAnomaly      92.511
+	}
+
+	RotationPeriod    4.633
+}
+
+"Dactyl" "Sol/Ida"
+{
+	Class "asteroid"
+	# Data for Dactyl is a very rough guess based on a value of
+	# 2.8 g/cm^3 for Ida
+	Texture "asteroid.jpg"
+	Mesh "roughsphere.cms"
+	Radius   0.7
+
+	EllipticalOrbit
+	{
+	Period         1.13
+	SemiMajorAxis  98
+	Eccentricity   0.05
+	}
+}
+
+
+"Eros" "Sol"
+{
+	Class "asteroid"
+	Mesh   "eros.3ds"
+	Texture "asteroid.jpg"
+	# Color sampled from true color photo taken by NEAR
+	Color   [ 0.52 0.47 0.42 ]
+	BlendTexture true
+	Radius 16.5
+
+	EllipticalOrbit
+	{
+	Period            1.76
+	SemiMajorAxis     1.4583
+	Eccentricity      0.2230
+	Inclination      10.831
+	AscendingNode   304.435
+	ArgOfPericenter   0.987
+        MeanAnomaly     310.0
+	}
+
+	RotationPeriod    5.270
+	Albedo            0.16
+}
+
+"Toutatis" "Sol"
+{
+	Class "asteroid"
+	Mesh   "toutatis.3ds"
+	Texture "asteroid.jpg"
+	# We'll just use the same color as Eros
+	Color   [ 0.52 0.47 0.42 ]
+	BlendTexture true
+	Radius  2.3
+
+	EllipticalOrbit
+	{
+	Period            3.976715
+	SemiMajorAxis     2.5100537
+	Eccentricity      0.6342274
+	Inclination       0.46959
+	AscendingNode   128.24788
+	ArgOfPericenter 274.78070
+        MeanAnomaly      86.28120
+	Epoch        2452200.5
+	}
+
+	Obliquity       35
+	RotationPeriod  129.6 # 5.41 days
+	PrecessionRate  48.98 # 7.35 day period
+
+	Albedo            0.16
+}
+
+"Geographos" "Sol"
+{
+	Class "asteroid"
+	Mesh   "geographos.3ds"
+	Texture "asteroid.jpg"
+	# We'll just use the same color as Eros
+	Color   [ 0.52 0.47 0.42 ]
+	BlendTexture true
+	Radius  1.0
+
+	EllipticalOrbit
+	{
+	Period            1.39 
+	SemiMajorAxis     1.2455
+	Eccentricity      0.3354
+	Inclination      13.34
+	AscendingNode   337.352
+	ArgOfPericenter 276.756
+        MeanAnomaly     180.595
+	Epoch      2450800.5
+	}
+
+	RotationPeriod    5.222
+	Albedo            0.16
+}
+
+"Kleopatra" "Sol"
+{
+	Class "asteroid"
+	Mesh   "kleopatra.3ds"
+	Texture "asteroid.jpg"
+	# We'll just use the same color as Eros
+	Color   [ 0.52 0.47 0.42 ]
+	BlendTexture true
+	Radius  109
+
+	EllipticalOrbit
+	{
+	Period            4.67
+	SemiMajorAxis     2.793
+	Eccentricity      0.2535
+	Inclination      13.14
+	AscendingNode   337.352
+	ArgOfPericenter 276.756
+        MeanAnomaly     180.595
+	Epoch      2450800.5
+	}
+
+	RotationPeriod    5.385
+	Albedo            0.16
+	# Class M
+
+}
+
+"1998 KY26" "Sol"
+{
+	Class "asteroid"
+	Mesh   "ky26.3ds"
+	Texture "asteroid.jpg"
+	# We'll just use the same color as Eros
+	Color   [ 0.52 0.47 0.42 ]
+	BlendTexture true
+	Radius  0.015
+
+	EllipticalOrbit
+	{
+	Period            1.3752
+	SemiMajorAxis     1.2320798
+	Eccentricity      0.20151423
+	Inclination       1.48127
+	AscendingNode    84.45490
+	ArgOfPericenter 209.14766
+        MeanAnomaly     356.6879717
+	Epoch       2452000.5 
+	}
+
+	RotationPeriod    0.178
+	Albedo            0.15
+
+}
+
+"Bacchus" "Sol"
+{
+	Class "asteroid"
+	Mesh   "bacchus.3ds"
+	Texture "asteroid.jpg"
+	# We'll just use the same color as Eros
+	Color   [ 0.52 0.47 0.42 ]
+	BlendTexture true
+	Radius  1.1
+
+	EllipticalOrbit
+	{
+	Period            1.1223
+	SemiMajorAxis     1.0781035
+	Eccentricity      0.34951251
+	Inclination       9.43160
+	AscendingNode    33.23590
+	ArgOfPericenter  55.18040
+        MeanAnomaly     229.8627955
+	Epoch       2452000.5 
+	}
+
+	RotationPeriod   14.9
+	Albedo            0.15
+
+}
+
+"Golevka" "Sol"
+{
+	Class "asteroid"
+	Mesh   "golevka.3ds"
+	Texture "asteroid.jpg"
+	# We'll just use the same color as Eros
+	Color   [ 0.52 0.47 0.42 ]
+	BlendTexture true
+	Radius  0.53
+
+	EllipticalOrbit
+	{
+	Period            3.982
+	SemiMajorAxis     2.5120500
+	Eccentricity      0.60117380
+	Inclination       2.28701
+	AscendingNode   212.16560
+	ArgOfPericenter  65.25133
+        MeanAnomaly     159.8983670
+	Epoch       2452000.5 
+	}
+
+	RotationPeriod    6.026
+	Albedo            0.15
+
+}
+
+"Castalia" "Sol"
+{ 
+	Class "asteroid"
+	Mesh   "castalia.3ds"
+	Texture "asteroid.jpg"
+	# We'll just use the same color as Eros
+	Color   [ 0.52 0.47 0.42 ]
+	BlendTexture true
+	Radius  2.0
+
+	EllipticalOrbit
+	{
+	Period            4.67
+	SemiMajorAxis     1.0632007
+	Eccentricity      0.48324394
+	Inclination       8.88806
+	AscendingNode   325.71246
+	ArgOfPericenter 121.26355
+        MeanAnomaly     152.5186007
+	Epoch       2452000.5 
+	}
+
+	RotationPeriod  130.0
+	Albedo            0.15
+
+}
+
+
+# Comets
+"Halley" "Sol"
+{
+	Class "comet"
+	Mesh "asteroid.cms"
+	Texture "asteroid.jpg"
+	Radius 7.5
+
+	EllipticalOrbit
+	{
+	Period            75.7
+	SemiMajorAxis    17.9541
+	Eccentricity      0.9673
+	Inclination       162.24
+	AscendingNode    58.86
+	ArgOfPericenter 111.87
+        MeanAnomaly       0.0
+	Epoch       2446480.5
+	}
+
+	RotationPeriod  170     # Guess; see http://www.lpi.usra.edu/meetings/dps97/html/H2918/H2918.html
+	Albedo            0.04
+}
+
+"Borrelly" "Sol"
+{
+	Class "comet"
+	Mesh "borrelly.cms"
+	Texture "asteroid.jpg"
+	Radius 2.5
+
+	EllipticalOrbit
+	{
+	Period            6.8631
+	SemiMajorAxis     3.61145
+	Eccentricity      0.623919
+	Inclination       30.3244
+	AscendingNode    75.4248
+	ArgOfPericenter 353.3741
+        MeanAnomaly       0.0
+	Epoch       2452200.5
+	}
+
+	RotationPeriod  170     #
+	Albedo            0.04
+}
+
+"Ikeya-Zhang" "Sol" 
+{ 
+	Class "comet"
+	Texture "asteroid.jpg" 
+	Mesh "roughsphere.cms"
+
+	EllipticalOrbit 
+	{ 
+	Period 367.181906
+	SemiMajorAxis 51.276792
+	Eccentricity 0.990111 
+	Inclination 28.1206
+	AscendingNode 93.3718
+	ArgOfPericenter 34.6666 
+	MeanAnomaly 0
+	Epoch 2452352.47847
+	} 
+
+	# These are all made up (copied from Halley) 
+	Radius 7.5 
+	RotationPeriod 170 
+	Albedo 0.04 
+}
+
+# Centaurs
+"Chiron" "Sol"
+{
+	Class "asteroid"
+	Texture "asteroid.jpg"
+	Radius 90
+
+	EllipticalOrbit
+	{
+	Period            50.7
+	SemiMajorAxis     13.6481
+	Eccentricity      0.3806
+	Inclination       6.937
+	AscendingNode   209.381
+	ArgOfPericenter 339.483
+        MeanAnomaly      13.177
+	Epoch       2450800.5
+	}
+
+	RotationPeriod    5.9
+}
+
+# Kuiper belt objects
+
+# 20000 Varuna
+"Varuna" "Sol"
+{
+	Class "asteroid"
+	Texture "asteroid.jpg"
+	Radius 450
+
+	EllipticalOrbit
+	{
+	Period           284.664
+	SemiMajorAxis     43.274
+	Eccentricity      0.056
+	Inclination      17.1
+	AscendingNode    97.3
+	ArgOfPericenter 274.9
+        MeanAnomaly      81.7
+	Epoch       2452003.0
+	}
+
+	Albedo 0.07
+
+	RotationPeriod     48.0   # Just a guess . . .
+}
+
+# 2001 KX76
+"2001 KX76" "Sol"
+{
+	Class "asteroid"
+	Texture "asteroid.jpg"
+	Radius 600
+
+	EllipticalOrbit
+	{
+	Period           245.797
+	SemiMajorAxis     39.293
+	Eccentricity      0.246
+	Inclination      19.7
+	AscendingNode    71.0
+	ArgOfPericenter 301.0
+        MeanAnomaly     258.8
+	Epoch       2452003.0
+	}
+
+	Albedo 0.07
+
+	RotationPeriod     48.0   # Just a guess . . .
+}

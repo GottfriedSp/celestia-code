@@ -1,0 +1,360 @@
+Celestia:  A real-time visual space simulation
+
+Copyright (C) 2001-2002, Chris Laurel <claurel@shatters.net>
+
+--
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307,
+USA.
+
+--
+
+Installing:
+
+WINDOWS:
+Unzip the files into a temporary directory, such as c:\temp\  Then, select
+Run from the Start menu and enter:
+
+TEMPDIR\setup.exe
+
+Where TEMPDIR is the name of your temporary directory (e.g. c:\temp\setup.exe)
+This will launch the setup program that will install Celestia on your
+computer.  After setup is complete, launch Celestia by selecting it from
+the start menu.
+
+UNIX:
+See the file INSTALL for detailed UNIX installation instructions.  Briefly,
+though:
+	./configure
+	make
+	make install
+
+
+Running Celestia:
+
+Celestia will start up in a window, and if everything is working
+correctly, you'll see Jupiter's moon Io in front of a field of
+stars.  In the left corner is a welcome message and some information
+about your target (Io), your speed, and the current time (Universal
+Time, so it'll probably be a few hours off from your computer's clock.)
+Right drag the mouse to orbit Io and you should see Jupiter and
+some familiar constellations.  Left dragging the mouse changes your
+orientation too, but the camera rotates about its center instead of
+rotating around Io.  Rolling the mouse wheel will change your distance
+to the space station--you can move light years away, then roll the wheel
+in the opposite direction to get back to your starting location.  If your
+mouse lacks a wheel, you can use the Home and End keys instead.
+
+In Celestia, you'll usually have some object selected; currently,
+it's Io, but it could also be a star, planet, spacecraft, or galaxy.
+The simplest way to select an object is to click on it.  Try clicking
+on a star to select it.  The information about Io is replaced with
+some details about the star.  Press G (or use the navigation menu),
+and you'll zoom through space toward the selected star.  If you
+press G again, you'll approach the star even closer.
+
+Press H to select our Sun, and then G to go back to our solar system.
+You'll find yourself half a light year away from the sun, which looks
+merely like a bright star at this range.  Press G three more times to
+get within about 30 AU of the sun and you will be to see a few become
+visible near the sun.  Right click on the sun to bring up a menu of
+planets and other objects in the solar system.  After selecting a planet
+from the menu, hit G again to travel toward it.  Once there, hold down
+the right mouse button and drag to orbit the planet.
+
+Tour Guide
+The tour guide is a list of some of the more interesting objects you can visit
+Celestia.  Select the Tour guide option in the navigation menu to bring up the
+guide window, choose a destination from the list, click the Goto button, and
+you're off.
+
+That covers the very basics . . .
+
+
+MOUSE FUNCTIONS:
+
+Left drag to orient camera
+Right drag to orbit the selected object
+Use the mouse wheel to adjust distance to selection
+    (for wheelless mice, dragging while holding left and right
+    buttons or left dragfing while holding control to dolly camera
+    will adjust distance)
+Left drag while holding shift to zoom
+Click the wheel to reset the field of view to 45 degrees
+Left-click to select; double click to center selection
+Right-click to bring up context menu
+
+KEYBOARD COMMANDS
+
+Navigation:
+H  : Select the sun (Home)
+C  : Center on selected object
+G  : Goto selected object
+F  : Follow selected object
+Y  : Orbit the selected object at a rate synced to its rotation
+:  : Lock on selected object
+"  : Chase selected object (orientation is based on selection's velocity)
+T  : Track selected object (keep selected object centered in view)
+HOME : Move closer to object
+END  : Move farther from object
+ESC  : Cancel motion or script
+Left/Right Arrows : Roll Camera
+Up / Down Arrows  : Change Camera Pitch
+1-9 : Select planets around nearby sun
+
+Time:
+Space : stop time
+L  : Time 10x faster
+K  : Time 10x slower
+J  : Reverse time
+
+Labels:
+N  : Toggle planet and moon labels
+B  : Toggle star labels
+=  : Toggle constellation labels
+V  : Toggle info text
+
+Options:
+U  : Toggle galaxy rendering
+O  : Toggle planet orbits
+/  : Toggle constellation diagrams
+Ctrl+A : Toggle atmospheres
+I  : Toggle cloud textures
+Ctrl+L : Toggle night side planet maps (light pollution)
+Ctrl+S : Toggle between textured and point stars
+Ctrl+E : Toggle rendering of eclipse shadows
+;  : Show an earth-based equatorial coordinate sphere
+[  : Decrease limiting magnitude (fewer stars visible)
+]  : Increase limiting magnitude (more stars visible)
+{  : Decrease ambient illumination
+}  : Increase ambient illumination
+,  : Narrow field of view
+.  : Widen field of view
+W  : Toggle wireframe mode
+Ctrl+P : Toggle per-pixel lighting (if supported)
+Ctrl+V : Toggle vertex programs (if supported)
+r R: lower or raise texture resolution
+
+Spaceflight:
+F1 : Stop 
+F2 : Set velocity to 1 km/s
+F3 : Set velocity to 1,000 km/s
+F4 : Set velocity to speed of light
+F5 : Set velocity to 1,000,000 km/s
+F6 : Set velocity to 1 AU/s
+F7 : Set velocity to 1 ly/s
+A  : Increase velocity (exponentially)
+Z  : Decrease velocity (exponentially)
+Q  : Reverse direction
+X  : Set movement direction toward center of screen
+
+Number pad:
+4  : Yaw left
+6  : Yaw right
+8  : Pitch down
+2  : Pitch up
+7  : Roll left
+9  : Roll right
+5  : Stop rotation
+
+Joystick:
+X axis : yaw
+Y axis : pitch
+L trigger : roll left
+R trigger : roll right
+Button 1 : slower
+Button 2 : faster
+
+Other:
+D   : Run demo
+F8  : Enable joystick
+F10 : Capture image to file
+`   : Show frames rendered per second
+ENTER : Select a star or planet by typing its name
+
+
+Star and Planet Browsers:
+[For the moment This only applies to the Windows version of Celestia.]
+In the navigation menu are 'Solar System Browser' and 'Star Browser'
+options.  The Solar System Browser pops up a window with a tree view
+of all the objects in the nearest solar system (if there is one at all
+within a light year of your current position.)  Clicking on the name
+of any planet in the window will select it; you can then use the center
+or goto buttons to see it in the main Celestia window.  The star
+browser is a window showing a table of the hundred nearest stars,
+along with their distances and apparent and absolute magnitudes. 
+Clicking on the column headers will sort the stars.  The table is
+not continuously updated--if you travel to another star, you should
+press the Refresh button to update the table for your current position.
+The radio buttons beneath the table let you switch between viewing
+a list of nearest or brightest stars.  As with the solar system browser,
+clicking on any star name in the table will select it--use this feature
+along with the center button to tour the stars visible from any night
+sky in the galaxy.
+
+Selecting Objects by Name:
+It's possible to choose a star or planet by name.  There are two ways to
+enter a star name: choose 'Select Object' from the Navigation menu to
+bring up a dialog box, or by hitting Enter, typing in the name, and
+pressing Enter again.  You can use common names, or Bayer designations
+and HD catalog numbers for stars.  Bayer and Flamsteed designations need
+to be entered like this:
+      Upsilon And
+      51 Peg 
+The constellation must be given as a three letter abbreviation and the
+full Greek letter name spelled out.  Irritating, but it'll be fixed.
+HD catalog numbers must be entered with a space between HD and the number.
+
+Celestia handles star catalog numbers in a slightly kludgy way.  To keep the
+star database size to minimum, only one catalog number is stored.  Normally,
+this will a number from the HD catalog, but if a star isn't in the HD catalog
+the number from another catalog will be used instead.  Currently, the secondary
+catalog is always the HIPPARCOS data set, for which the prefix "HIP" should be
+used.
+
+
+Known Issues:
+
+Many people have reported problems running Celestia with Matrox G400/G450
+3D accelerator cards.  As I don't have a Matrox card, I haven't made much
+progress on this bug.  If you do have a G400, have Visual C++ installed, and
+would be interested in testing a debug version of Celestia, please contact me.
+
+The maximum texture size supported by the Voodoo 1/2/3 is 256x256, so many
+of the planet textures will look blurry when running Celestia on one of these
+cards.
+
+On 3D accelerator cards with a limited amount of memory, resizing the main
+Celestia window can cause textures to disappear.  This occurs because so
+much memory is required the frame buffer that there's not enough left for
+textures.  There are a several workarounds:
+    - Use a smaller window
+    - Make sure your display is set to 16-bit (high color) mode
+    - Try running Celestia in full screen mode
+
+Celestia only barely works in 256 color mode; if your display is set to
+256 colors, change to 16-bit or 32-bit if at all possible.
+
+If look good at a distance but get to dark when you approach them closely,
+your OpenGL driver does not support a required extension.  Try upgrading to
+the most current version of drivers available for your card.  For some older
+cards, this still won't fix the problem.  The next version of Celestia will
+feature a workaround.
+
+
+Basic Hacking Tips:
+
+It's possible to modify the solarsys.ssc, stars.dat, and hdnames.dat
+files to create an entirely fictional universe.
+
+The easiest file to modify is the solar system catalog, as it's a text
+file and the format is very text-editor friendly since that's how I
+had to enter all the data.  It's also quite verbose, but that's not a
+problem yet.
+
+The units used for the solar system data may not be obvious.  All
+angle fields in the catalog are in degrees.  For planets, the period
+is specified in earth years, and the semi-major axis in AU; for
+satellites, days and kilometers are used instead.
+
+All solar system textures should be placed in the textures
+subdirectory.  Currently, JPEG and BMP are the only formats supported.
+Models belong in the models directory.  Celestia can read 3DS models,
+as well as a custom format (.cms files, used right now just for rough
+fractal displacement map likenesses of asteroids and small moons.)  3DS
+meshes are normalized to fit within a unit cube--the Radius field
+determines how big they appear within Celestia.
+
+The stars.dat file is a binary database of stars, processed from
+the 50+ meg HIPPARCOS data set.  The first four bytes are an int
+containing the number of stars in the database.  Following that
+are a bunch of records of this form:
+
+4 byte int   : catalog number
+4 byte float : right ascension
+4 byte float : declination
+4 byte float : parallax
+2 byte int   : apparent magnitude
+2 byte int   : stellar class
+1 byte       : parallax error
+
+RA, declination, and parallax are converted to x, y, z coordinates
+and apparent magnitude is converted to absolute magnitude when the
+database is read.
+
+
+Authors:
+
+Chris Laurel
+Clint Weisbrod
+Deon Ramsey (UNIX installer)
+Colin Walters (endianness fixes)
+James Holmes
+
+
+Contributors:
+
+Models of Mars Global Surveyor and Mars Odyssey were created by
+Shrox: http://www.shrox.com/
+
+Most of the planet maps are from David Seal's
+site: http://maps.jpl.nasa.gov/.  A few of these maps were modified by me,
+with fictional terrain added to fill in gaps.  The model of the Galileo
+spacecraft is also from David Seal's site (though it was converter from
+Inventor to 3DS format.)
+
+The Mars, Moon, and Pluto textures and bump maps are all from
+James Hastings-Trew's collection.  Some of the prettiest planet maps
+around are at http://apollo.spaceports.com/~jhasting/
+
+The Venus, Saturn, and Saturn's rings textures are from Bjorn Jonsson.
+His site is http://www.mmedia.is/~bjj/ and is an excellent resource
+for solar system rendering.
+
+The Earth texture was created by NASA using data from the MODIS instrument
+aboard the Terra satellite.  Further information is available from
+http://earthobservatory.nasa.gov/Newsroom/BlueMarble/
+
+The textures for the Uranian satellites were created by Ivan Rivera from
+JPL data.  His Celestia page is http://bruckner.homelinux.net/celestia.html
+
+The lower resolution textures were all converted from their higher resolution
+Versions using Gimp.
+
+3D asteroid models of Toutatis, Kleopatra, and Geographos are courtesy of
+Scott Hudson, Washington State University.  His site is:
+http://www.eecs.wsu.edu/~hudson/Research/Asteroids/4179/index.html
+
+3D models of Phobos, Deimos, Amalthea, Proteus, Vesta, Ida,
+Mathilde, and Gaspra are derived from Phil Stooke's Cartography of
+Non-Spherical Worlds:  http://publish.uwo.ca/~pjstooke/plancart.htm
+
+The txf font format used by Celestia was devised by Mark Kilgard.
+
+The star database (stars.dat) was derived from the ESA's HIPPARCOS data set.
+
+This software is based in part on the work of the Independent JPEG
+Group.
+
+Thank you to all the Celestia users who've submitted bug reports,
+suggestions, and fixes over the past year.  Celestia wouldn't be the
+program it is without your help.
+
+
+Chris Laurel
+claurel@shatters.net
+http://www.shatters.net/~claurel
+and
+http://www.shatters.net/celestia/

@@ -1,0 +1,51 @@
+Celestia Install instructions for UNIX
+--------------------------------------
+
+You need to have the following components installed before Celestia
+will build: OpenGL (tested with Mesa 3.4), glu, glut, libjpeg, and libpng.
+Should you have a package based installation (most Linux distributions these
+days are), you will also need to install the devel packages for your OpenGL,
+glu, glut and glibc packages.
+
+OK, assuming you've collected all the necessary libraries, here's
+what you need to do to build and run Celestia:
+
+	configure
+	make
+	make install
+
+Celestia can be built with or without support for Gtk, by default the Gtk+
+version will be built if you have Gtk+ and GtkGLArea available, otherwise it
+just uses GLUT and has no GUI. If you need/want to build the non-Gtk+ version
+even though you have Gtk+ and GtkGLArea, run configure with --without-gtk:
+
+	configure --without-gtk
+
+The GtkGLArea widget that is required in order to build Celestia with Gtk+ may
+be downloaded from http://www.student.oulu.fi/~jlof/gtkglarea/ . Note that
+depending in your Installation Distributions you may also need other packages
+containing various information needed by the build process, for instance, to
+build under SUSE Linux, you will also need to have the gtk-devel package
+installed, and having GNOME's devel packages present also is probably not
+a bad idea (in fact, currently absolutely necessary for the GTK version).
+
+Celestia will be installed into /usr/local by default, with data files landing
+in /usr/local/share/Celestia , but you may specify a new location with the
+--prefix option to configure:
+
+	configure --prefix=/home/my_directory
+
+All the other usual configure parameters apply; you may see which options
+are available using 'configure --help'
+
+If while running configure you see an error reporting that gl.h,
+is missing, you either don't have OpenGL installed on your system,
+or you don't have the corresponding devel package installed.  If for
+instance you have Mesa installed, you will also have to install the
+mesa-devel package (or something named similarly).  Missing glu.h or glut.h
+means that you don't have GLU, GLUT, or their devel pacakges installed.
+
+
+Chris Laurel                &      Deon Ramsey
+claurel@.shatters.net              dramsey@users.sourceforge.net
+
