@@ -1,0 +1,2397 @@
+# Catalog of known extrasolar planetary systems.
+#
+# Data compiled from the Extrasolar Planets Catalog at http://www.obspm.fr/encycl/catalog.html
+#
+# M.sin(i) has been used as an estimate of mass. Where this is greater than 11 jupiters, the
+# body is rendered as a brown dwarf, since its true mass is likely to exceed the brown dwarf
+# limit of 13 jupiters.
+#
+# Planetary radius is usually unknown. Theoretical models are available, but depend on other
+# unknowns - atmospheric composition, age, albedo and true mass. Radii have therefore been
+# only roughly approximated here, since any more precise values would be misleading.
+# Hot objects (>800K) have a radius of 1.4 jupiters if M.sin(i) is less than 1.2 jupiters, and
+# a radius of 1.2 jupiters if they are more massive. At temperatures between 500K and 800K, these
+# same objects are assigned radii of 1.2 and 1 jupiters, respectively. Cold objects have a radius
+# of 1 jupiter unless M.sin(i)<0.7, at which point radius is reduced to 0.8 jupiters.
+#
+# Spin-down times to synchronous rotation have been estimated using the formula by Guillot et al
+# in 'Giant Planets at Small Orbital Distances' The Astrophysical Journal 1996; 459: L35-L38.
+# Planets with spin-down times less than a billion years have been assigned sun-synchronous
+# rotations. Others have been assigned a 10-hour rotation period, analogous to Jupiter.
+#
+# Planets with an estimated temperature greater than 1000K have been assigned a glowing nightside
+# texture.
+#
+# For most extrasolar planets, the position of the pericenter and the mean anomaly are known,
+# but the actually orientation and inclination of the orbit in the plane of the sky are unknown.
+# These objects have been left with their orbital planes in the default position (the ecliptic
+# plane), but their pericenters and anomalies are correctly rendered. For HD 209458 b and
+# OGLE-TR-56 b, the true inclination is known from transits, but the orientation of the orbit
+# in the plane of the sky is unknown.
+
+"b" "OGLE-TR-56"
+
+# Detected via transit as well as radial velocity methods; from transit,
+# inclination is fixed at 81 degrees, so mass can be determined.
+# Radius is estimated at 1.30 jupiters.
+
+
+# Star not present in Celestia's default stars.dat file.
+
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    290     # M.sin(i) = 0.9 jupiters
+	Radius  91000
+
+	InfoURL "http://www.obspm.fr/encycl/OGLE-TR-56.html"
+
+	EllipticalOrbit {
+		Period          0.0033
+		SemiMajorAxis   0.0225
+		Inclination     89.4
+		AscendingNode   260.2
+		ArgOfPericenter 84
+		MeanAnomaly     357
+	}
+
+	Obliquity             89   # guess, to match inclination
+	EquatorAscendingNode 260   # guess, to match ascending node
+
+}
+
+"b" "HD 73256"
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    590     # M.sin(i) = 1.85 jupiters
+	Radius  84000
+
+	InfoURL "http://www.obspm.fr/encycl/HD73256.html"
+
+	EllipticalOrbit {
+		Period          0.007
+		SemiMajorAxis   0.037
+		Eccentricity    0.038
+		ArgOfPericenter 207
+		MeanAnomaly     83
+	}
+}
+
+"b" "HD 83443"
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    130     # M.sin(i) = 0.41 jupiters
+	Radius  98000
+
+	InfoURL "http://www.obspm.fr/encycl/HD83443.html"
+
+	EllipticalOrbit {
+		Period          0.0082
+		SemiMajorAxis   0.04
+		Eccentricity    0.08
+		ArgOfPericenter 303
+		MeanAnomaly     286
+	}
+}
+
+"b" "HD 46375"
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    80     # M.sin(i) = 0.249 jupiters
+	Radius  98000
+
+	InfoURL "http://www.obspm.fr/encycl/HD83443.html"
+
+	EllipticalOrbit {
+		Period          0.0083
+		SemiMajorAxis   0.041
+		Eccentricity    0.04
+		ArgOfPericenter 241
+		MeanAnomaly     273
+	}
+}
+
+"b" "HD 179949"
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    310     # M.sin(i) = 0.98 jupiters
+	Radius  98000
+
+	InfoURL "http://www.obspm.fr/encycl/HD179949.html"
+
+	EllipticalOrbit {
+		Period          0.0085
+		SemiMajorAxis   0.045
+		Eccentricity    0.05
+		MeanAnomaly     357
+	}
+}
+
+"b" "HD 187123"
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    170     # M.sin(i) = 0.52 jupiters
+	Radius  98000
+
+	InfoURL "http://www.obspm.fr/encycl/HD187123.html"
+
+	EllipticalOrbit {
+		Period          0.0085
+		SemiMajorAxis   0.042
+		Eccentricity    0.03
+		ArgOfPericenter 59
+		MeanAnomaly     136
+	}
+}
+
+"b" "HD 120136"   # Tau Boo
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    1310     # M.sin(i) = 4.13 jupiters
+	Radius  84000
+
+	InfoURL "http://www.obspm.fr/encycl/tau-Boo.html"
+
+	EllipticalOrbit {
+		Period          0.0091
+		SemiMajorAxis   0.0462
+		Eccentricity    0.018
+		ArgOfPericenter 353
+		MeanAnomaly     26
+	}
+}
+
+"b" "TYC 5503-946-1"   # BD-10 3166
+
+# Star not present in Celestia's default stars.dat file.
+
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    150     # M.sin(i) = 0.48 jupiters
+	Radius  98000
+
+	InfoURL "http://www.obspm.fr/encycl/BD-10_3166.html"
+
+	EllipticalOrbit {
+		Period          0.0095
+		SemiMajorAxis   0.046
+		Eccentricity    0
+		ArgOfPericenter 288
+		MeanAnomaly     8
+	}
+}
+
+"b" "HD 75289"
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    130     # M.sin(i) = 0.42 jupiters
+	Radius  98000
+
+	InfoURL "http://www.obspm.fr/encycl/HD75289.html"
+
+	EllipticalOrbit {
+		Period          0.0096
+		SemiMajorAxis   0.046
+		Eccentricity    0.054
+		ArgOfPericenter 100
+		MeanAnomaly     145
+	}
+}
+
+"b" "HD 209458"   # V376 Peg
+
+# Detected via transit as well as radial velocity methods; from transit,
+# inclination is fixed at 86.1 degrees, so mass can be determined.
+# Radius is estimated at 1.43 jupiters.
+
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    220     # M.sin(i) = 0.69 jupiters
+	Radius  100100
+
+	InfoURL "http://www.obspm.fr/encycl/HD209458.html"
+
+	EllipticalOrbit {
+		Period          0.0097
+		SemiMajorAxis   0.045
+		Eccentricity    0
+		Inclination     71.7
+		AscendingNode   325.1
+		ArgOfPericenter 205
+		MeanAnomaly     148
+	}
+
+	Obliquity             72   # guess, to match inclination
+	EquatorAscendingNode 325   # guess, to match ascending node
+
+}
+
+"b" "HD 76700"
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    60     # M.sin(i) = 0.197 jupiters
+	Radius  98000
+
+	InfoURL "http://www.obspm.fr/encycl/HD76700.html"
+
+	EllipticalOrbit {
+		Period          0.0109
+		SemiMajorAxis   0.049
+		Eccentricity    0
+		MeanAnomaly     227
+	}
+}
+
+"b" "HD 217014"   # 51 Peg
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    150     # M.sin(i) = 0.46 jupiters
+	Radius  98000
+
+	InfoURL "http://www.obspm.fr/encycl/51Peg.html"
+
+	EllipticalOrbit {
+		Period          0.0116
+		SemiMajorAxis   0.0512
+		Eccentricity    0.013
+		ArgOfPericenter 115
+		MeanAnomaly     346
+	}
+}
+
+"b" "HD 9826"   # Ups And
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    220     # M.sin(i) = 0.69 jupiters
+	Radius  98000
+
+	InfoURL "http://www.obspm.fr/encycl/ups-And.html"
+
+	EllipticalOrbit {
+		Period          0.0126
+		SemiMajorAxis   0.059
+		Eccentricity    0.012
+		ArgOfPericenter 202
+		MeanAnomaly     65
+	}
+}
+
+"c" "HD 9826"   # Ups And
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    380     # M.sin(i) = 1.19 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/ups-And.html"
+
+	EllipticalOrbit {
+		Period          0.6612
+		SemiMajorAxis   0.829
+		Eccentricity    0.28
+		ArgOfPericenter 19
+		MeanAnomaly     264
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"d" "HD 9826"   # Ups And
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1190     # M.sin(i) = 3.75 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/ups-And.html"
+
+	EllipticalOrbit {
+		Period          3.5154
+		SemiMajorAxis   2.53
+		Eccentricity    0.27
+		ArgOfPericenter 29
+		MeanAnomaly     55
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 49674"
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    40     # M.sin(i) = 0.12 jupiters
+	Radius  98000
+
+	InfoURL "http://www.obspm.fr/encycl/HD49674.html"
+
+	EllipticalOrbit {
+		Period          0.0135
+		SemiMajorAxis   0.0568
+		Eccentricity    0
+		ArgOfPericenter 190
+		MeanAnomaly     97
+	}
+}
+
+"b" "HD 68988"
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    600     # M.sin(i) = 1.9 jupiters
+	Radius  84000
+
+	InfoURL "http://www.obspm.fr/encycl/HD68988.html"
+
+	EllipticalOrbit {
+		Period          0.0172
+		SemiMajorAxis   0.071
+		Eccentricity    0.14
+	}
+}
+
+"b" "HD 168746"
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    70     # M.sin(i) = 0.23 jupiters
+	Radius  98000
+
+	InfoURL "http://www.obspm.fr/encycl/HD168746.html"
+
+	EllipticalOrbit {
+		Period          0.0175
+		SemiMajorAxis   0.065
+		Eccentricity    0.081
+		ArgOfPericenter 22
+		MeanAnomaly     276
+	}
+}
+
+"b" "HD 217107"
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    410     # M.sin(i) = 1.28 jupiters
+	Radius  84000
+
+	InfoURL "http://www.obspm.fr/encycl/HD217107.html"
+
+	EllipticalOrbit {
+		Period          0.0195
+		SemiMajorAxis   0.07
+		Eccentricity    0.14
+		ArgOfPericenter 100
+		MeanAnomaly     356
+	}
+}
+
+"b" "HD 162020"
+{
+	Texture "browndwarf.jpg"
+	Emissive true
+
+	Mass    4370     # M.sin(i) = 13.75 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD162020.html"
+
+	EllipticalOrbit {
+		Period          0.0231
+		SemiMajorAxis   0.072
+		Eccentricity    0.277
+		ArgOfPericenter 331
+		MeanAnomaly     43
+	}
+}
+
+"b" "HD 130322"
+{
+	Texture "gasgiant.jpg"
+
+	Mass    340     # M.sin(i) = 1.08 jupiters
+	Radius  84000
+
+	InfoURL "http://www.obspm.fr/encycl/HD130322.html"
+
+	EllipticalOrbit {
+		Period          0.0294
+		SemiMajorAxis   0.088
+		Eccentricity    0.048
+		ArgOfPericenter 155
+		MeanAnomaly     7
+	}
+}
+
+"b" "HD 108147"
+{
+	Texture "gasgiant.jpg"
+
+	Mass    130     # M.sin(i) = 0.41 jupiters
+	Radius  98000
+
+	InfoURL "http://www.obspm.fr/encycl/HD108147.html"
+
+	EllipticalOrbit {
+		Period          0.0298
+		SemiMajorAxis   0.104
+		Eccentricity    0.498
+		ArgOfPericenter 271
+		MeanAnomaly     261
+	}
+}
+
+"b" "HD 38529"
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    250     # M.sin(i) = 0.78 jupiters
+	Radius  98000
+
+	InfoURL "http://www.obspm.fr/encycl/HD38529.html"
+
+	EllipticalOrbit {
+		Period          0.0392
+		SemiMajorAxis   0.129
+		Eccentricity    0.29
+		ArgOfPericenter 264
+		MeanAnomaly     205
+	}
+}
+
+"c" "HD 38529"
+{
+	Texture "browndwarf.jpg"
+	Emissive true
+	# M.sin(i) is so close to 13, true mass is likely to exceed brown dwarf limit
+
+	Mass    4040     # M.sin(i) = 12.7 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD38529.html"
+
+	EllipticalOrbit {
+		Period          5.9529
+		SemiMajorAxis   3.68
+		Eccentricity    0.36
+		ArgOfPericenter 191
+		MeanAnomaly     244
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 75732"   # Rho Cnc
+{
+	Texture "gasgiant.jpg"
+
+	Mass    270     # M.sin(i) = 0.84 jupiters
+	Radius  84000
+
+	InfoURL "http://www.obspm.fr/encycl/55Cnc.html"
+
+	EllipticalOrbit {
+		Period          0.0401
+		SemiMajorAxis   0.115
+		Eccentricity    0.02
+		ArgOfPericenter 317
+		MeanAnomaly     122
+	}
+}
+
+"c" "HD 75732"   # Rho Cnc
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    70     # M.sin(i) = 0.21 jupiters
+	Radius  56000
+
+	InfoURL "http://www.obspm.fr/encycl/55Cnc.html"
+
+	EllipticalOrbit {
+		Period          0.1212
+		SemiMajorAxis   0.241
+		Eccentricity    0.339
+		ArgOfPericenter 279
+		MeanAnomaly     67
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"d" "HD 75732"   # Rho Cnc
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1290     # M.sin(i) = 4.05 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/55Cnc.html"
+
+	EllipticalOrbit {
+		Period          14.6749
+		SemiMajorAxis   5.9
+		Eccentricity    0.16
+		ArgOfPericenter 59
+		MeanAnomaly     277
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 13445"   # Gliese 86
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1280     # M.sin(i) = 4.01 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/Gl86.html"
+
+	EllipticalOrbit {
+		Period          0.0432
+		SemiMajorAxis   0.11
+		Eccentricity    0.046
+		ArgOfPericenter 356
+		MeanAnomaly     98
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 195019"
+{
+	Texture "gasgiant.jpg"
+
+	Mass    1090     # M.sin(i) = 3.43 jupiters
+	Radius  84000
+
+	InfoURL "http://www.obspm.fr/encycl/HD195019.html"
+
+	EllipticalOrbit {
+		Period          0.0501
+		SemiMajorAxis   0.14
+		Eccentricity    0.05
+		ArgOfPericenter 330
+		MeanAnomaly     183
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 6434"
+{
+	Texture "gasgiant.jpg"
+
+	Mass    150     # M.sin(i) = 0.48 jupiters
+	Radius  84000
+
+	InfoURL "http://www.obspm.fr/encycl/HD6434.html"
+
+	EllipticalOrbit {
+		Period          0.0605
+		SemiMajorAxis   0.15
+		Eccentricity    0.3
+		ArgOfPericenter 230
+		MeanAnomaly     175
+	}
+}
+
+"b" "HD 192263"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    230     # M.sin(i) = 0.72 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD192263.html"
+
+	EllipticalOrbit {
+		Period          0.0667
+		SemiMajorAxis   0.15
+		Eccentricity    0
+		MeanAnomaly     59
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"c" "Gliese 876"   # IL Aqr
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    180     # M.sin(i) = 0.56 jupiters
+	Radius  56000
+
+	InfoURL "http://www.obspm.fr/encycl/Gl876.html"
+
+	EllipticalOrbit {
+		Period          0.0825
+		SemiMajorAxis   0.13
+		Eccentricity    0.27
+		ArgOfPericenter 39
+		MeanAnomaly     91
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "Gliese 876"   # IL Aqr
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    600     # M.sin(i) = 1.89 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/Gl876.html"
+
+	EllipticalOrbit {
+		Period          0.1671
+		SemiMajorAxis   0.208
+		Eccentricity    0.1
+		ArgOfPericenter 42
+		MeanAnomaly     208
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 143761"   # Rho CrB
+{
+	Texture "gasgiant.jpg"
+
+	Mass    330     # M.sin(i) = 1.04 jupiters
+	Radius  84000
+
+	InfoURL "http://www.obspm.fr/encycl/rho-Crb.html"
+
+	EllipticalOrbit {
+		Period          0.1091
+		SemiMajorAxis   0.22
+		Eccentricity    0.04
+		ArgOfPericenter 268
+		MeanAnomaly     223
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 74156"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    500     # M.sin(i) = 1.56 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD74156.html"
+
+	EllipticalOrbit {
+		Period          0.1413
+		SemiMajorAxis   0.276
+		Eccentricity    0.649
+		ArgOfPericenter 45
+		MeanAnomaly     196
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"c" "HD 74156"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    2380     # M.sin(i) = 7.5 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD74156.html"
+
+	EllipticalOrbit {
+		Period          6.2971
+		SemiMajorAxis   3.47
+		Eccentricity    0.395
+		ArgOfPericenter 102
+		MeanAnomaly     109
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 168443"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    2290     # M.sin(i) = 7.2 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD168443.html"
+
+	EllipticalOrbit {
+		Period          0.1591
+		SemiMajorAxis   0.29
+		Eccentricity    0.529
+		ArgOfPericenter 178
+		MeanAnomaly     278
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"c" "HD 168443"
+{
+	Texture "browndwarf.jpg"
+	Emissive true
+
+	Mass    5440     # M.sin(i) = 17.1 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD168443.html"
+
+	EllipticalOrbit {
+		Period          4.7625
+		SemiMajorAxis   2.87
+		Eccentricity    0.228
+		ArgOfPericenter 68
+		MeanAnomaly     263
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 3651"   # 54 Psc
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    60     # M.sin(i) = 0.2 jupiters
+	Radius  56000
+
+	InfoURL "http://www.obspm.fr/encycl/HD3651.html"
+
+	EllipticalOrbit {
+		Period          0.1704
+		SemiMajorAxis   0.284
+		Eccentricity    0.63
+		ArgOfPericenter 343
+		MeanAnomaly     225
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 121504"
+{
+	Texture "gasgiant.jpg"
+
+	Mass    280     # M.sin(i) = 0.89 jupiters
+	Radius  84000
+
+	InfoURL "http://www.obspm.fr/encycl/HD121504.html"
+
+	EllipticalOrbit {
+		Period          0.1769
+		SemiMajorAxis   0.32
+		Eccentricity    0.13
+		ArgOfPericenter 159
+		MeanAnomaly     260
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HIP 94075"   # HD 178911 B
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    2000     # M.sin(i) = 6.292 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD178911B.html"
+
+	EllipticalOrbit {
+		Period          0.1957
+		SemiMajorAxis   0.32
+		Eccentricity    0.1243
+		ArgOfPericenter 202
+		MeanAnomaly     117
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 16141"   # 79 Cet
+{
+	Texture "gasgiant.jpg"
+
+	Mass    70     # M.sin(i) = 0.23 jupiters
+	Radius  84000
+
+	InfoURL "http://www.obspm.fr/encycl/HD16141.html"
+
+	EllipticalOrbit {
+		Period          0.2069
+		SemiMajorAxis   0.35
+		Eccentricity    0.21
+		ArgOfPericenter 178
+		MeanAnomaly     3
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 114762"
+{
+	Texture "browndwarf.jpg"
+	Emissive true
+	# M.sin(i) is so close to 13, true mass is likely to exceed brown dwarf limit
+
+	Mass    3500     # M.sin(i) = 11.02 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD114762.html"
+
+	EllipticalOrbit {
+		Period          0.2301
+		SemiMajorAxis   0.3
+		Eccentricity    0.334
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 80606"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1080     # M.sin(i) = 3.41 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD80606.html"
+
+	EllipticalOrbit {
+		Period          0.306
+		SemiMajorAxis   0.439
+		Eccentricity    0.927
+		ArgOfPericenter 147
+		MeanAnomaly     59
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "BD-02 5917 B"   # HD 219542 B
+
+# Star not present in Celestia's default stars.dat file.
+
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    100     # M.sin(i) = 0.3 jupiters
+	Radius  56000
+
+	InfoURL "http://www.obspm.fr/encycl/HD219542B.html"
+
+	EllipticalOrbit {
+		Period          0.3069
+		SemiMajorAxis   0.46
+		Eccentricity    0.32
+		ArgOfPericenter 130
+		MeanAnomaly     356
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 117176"   # 70 Vir
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    2370     # M.sin(i) = 7.44 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/70Vir.html"
+
+	EllipticalOrbit {
+		Period          0.3195
+		SemiMajorAxis   0.48
+		Eccentricity    0.4
+		ArgOfPericenter 283
+		MeanAnomaly     322
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 216770"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    210     # M.sin(i) = 0.65 jupiters
+	Radius  56000
+
+	InfoURL "http://www.obspm.fr/encycl/HD216770.html"
+
+	EllipticalOrbit {
+		Period          0.3243
+		SemiMajorAxis   0.46
+		Eccentricity    0.37
+		ArgOfPericenter 8
+		MeanAnomaly     175
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 52265"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    360     # M.sin(i) = 1.13 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD52265.html"
+
+	EllipticalOrbit {
+		Period          0.3257
+		SemiMajorAxis   0.49
+		Eccentricity    0.29
+		ArgOfPericenter 73
+		MeanAnomaly     356
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 1237"   # GJ 3021
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1020     # M.sin(i) = 3.21 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/GJ3021.html"
+
+	EllipticalOrbit {
+		Period          0.3116
+		SemiMajorAxis   0.49
+		Eccentricity    0.505
+		ArgOfPericenter 316
+		MeanAnomaly     59
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 37124"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    240     # M.sin(i) = 0.75 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD37124.html"
+
+	EllipticalOrbit {
+		Period          0.4172
+		SemiMajorAxis   0.54
+		Eccentricity    0.1
+		ArgOfPericenter 235
+		MeanAnomaly     68
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"c" "HD 37124"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    380     # M.sin(i) = 1.2 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD37124.html"
+
+	EllipticalOrbit {
+		Period          4.0931
+		SemiMajorAxis   2.5
+		Eccentricity    0.69
+		ArgOfPericenter 74
+		MeanAnomaly     282
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 219449"   # Psi1 Aqr
+{
+	Texture "gasgiant.jpg"
+	NightTexture "gasgiantnight.jpg"
+
+	Mass    920     # M.sin(i) = 2.9 jupiters
+	Radius  84000
+
+	InfoURL "http://www.obspm.fr/encycl/HD219449.html"
+
+	EllipticalOrbit {
+		Period          0.4983
+		SemiMajorAxis   0.3
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 73526"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    950     # M.sin(i) = 3 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD73526.html"
+
+	EllipticalOrbit {
+		Period          0.5216
+		SemiMajorAxis   0.66
+		Eccentricity    0.34
+		ArgOfPericenter 87
+		MeanAnomaly     43
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 104985"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    2000     # M.sin(i) = 6.3 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD104985.html"
+
+	EllipticalOrbit {
+		Period          0.5426
+		SemiMajorAxis   0.78
+		Eccentricity    0.03
+		ArgOfPericenter 161
+		MeanAnomaly     75
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 82943"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    520     # M.sin(i) = 1.63 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD82943.html"
+
+	EllipticalOrbit {
+		Period          1.2172
+		SemiMajorAxis   1.16
+		Eccentricity    0.41
+		ArgOfPericenter 358
+		MeanAnomaly     294
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"c" "HD 82943"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    280     # M.sin(i) = 0.88 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD82943.html"
+
+	EllipticalOrbit {
+		Period          0.6067
+		SemiMajorAxis   0.73
+		Eccentricity    0.54
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 169830"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    960     # M.sin(i) = 3.03 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD169830.html"
+
+	EllipticalOrbit {
+		Period          0.6227
+		SemiMajorAxis   0.82
+		Eccentricity    0.327
+		ArgOfPericenter 162
+		MeanAnomaly     115
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"c" "HD 169830"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    800     # M.sin(i) = 2.51 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD169830.html"
+
+	EllipticalOrbit {
+		Period          4.0712
+		SemiMajorAxis   2.85
+		Eccentricity    0
+		ArgOfPericenter 50
+		MeanAnomaly     350
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 8574"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    710     # M.sin(i) = 2.23 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD8574.html"
+
+	EllipticalOrbit {
+		Period          0.6264
+		SemiMajorAxis   0.76
+		Eccentricity    0.4
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 89744"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    2290     # M.sin(i) = 7.2 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD89744.html"
+
+	EllipticalOrbit {
+		Period          0.7009
+		SemiMajorAxis   0.88
+		Eccentricity    0.7
+		ArgOfPericenter 63
+		MeanAnomaly     56
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 134987"   # 23 Lib
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    500     # M.sin(i) = 1.58 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD134987.html"
+
+	EllipticalOrbit {
+		Period          0.7118
+		SemiMajorAxis   0.78
+		Eccentricity    0.24
+		ArgOfPericenter 329
+		MeanAnomaly     242
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 40979"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1060     # M.sin(i) = 3.32 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD40979.html"
+
+	EllipticalOrbit {
+		Period          0.7316
+		SemiMajorAxis   0.811
+		Eccentricity    0.23
+		ArgOfPericenter 132
+		MeanAnomaly     21
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 12661"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    730     # M.sin(i) = 2.3 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD12661.html"
+
+	EllipticalOrbit {
+		Period          0.7217
+		SemiMajorAxis   0.83
+		Eccentricity    0.35
+		ArgOfPericenter 60
+		MeanAnomaly     29
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"c" "HD 12661"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    500     # M.sin(i) = 1.57 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD12661.html"
+
+	EllipticalOrbit {
+		Period          3.9548
+		SemiMajorAxis   2.56
+		Eccentricity    0.2
+		ArgOfPericenter 290
+		MeanAnomaly     91
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 150706"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    320     # M.sin(i) = 1 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD150706.html"
+
+	EllipticalOrbit {
+		Period          0.7253
+		SemiMajorAxis   0.82
+		Eccentricity    0.38
+		ArgOfPericenter 14
+		MeanAnomaly     312
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 59686"
+{
+	Texture "gasgiant.jpg"
+
+	Mass    2070     # M.sin(i) = 6.5 jupiters
+	Radius  84000
+
+	InfoURL "http://www.obspm.fr/encycl/HD59686.html"
+
+	EllipticalOrbit {
+		Period          0.8296
+		SemiMajorAxis   0.8
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 17051"   # Iot Hor / HR 810
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    620     # M.sin(i) = 1.94 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HR810.html"
+
+	EllipticalOrbit {
+		Period          0.8523
+		SemiMajorAxis   0.91
+		Eccentricity    0.24
+		ArgOfPericenter 81
+		MeanAnomaly     32
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 142"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    320     # M.sin(i) = 1 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD142.html"
+
+	EllipticalOrbit {
+		Period          0.923
+		SemiMajorAxis   0.98
+		Eccentricity    0.38
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 92788"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1230     # M.sin(i) = 3.86 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD92788.html"
+
+	EllipticalOrbit {
+		Period          1.0341
+		SemiMajorAxis   0.97
+		Eccentricity    0.27
+		ArgOfPericenter 179
+		MeanAnomaly     272
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 28185"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1780     # M.sin(i) = 5.6 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD28185.html"
+
+	EllipticalOrbit {
+		Period          1.0486
+		SemiMajorAxis   1.03
+		Eccentricity    0.07
+		ArgOfPericenter 144
+		MeanAnomaly     70
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 142415"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    520     # M.sin(i) = 1.62 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD142415.html"
+
+	EllipticalOrbit {
+		Period          1.0576
+		SemiMajorAxis   1.05
+		Eccentricity    0.5
+		ArgOfPericenter 236
+		MeanAnomaly     24
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 177830"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    410     # M.sin(i) = 1.28 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD177830.html"
+
+	EllipticalOrbit {
+		Period          1.0705
+		SemiMajorAxis   1
+		Eccentricity    0.43
+		ArgOfPericenter 213
+		MeanAnomaly     143
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 108874"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    530     # M.sin(i) = 1.65 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD108874.html"
+
+	EllipticalOrbit {
+		Period          1.0979
+		SemiMajorAxis   1.07
+		Eccentricity    0.2
+		ArgOfPericenter 139
+		MeanAnomaly     237
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 4203"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    530     # M.sin(i) = 1.65 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD4203.html"
+
+	EllipticalOrbit {
+		Period          1.0977
+		SemiMajorAxis   1.09
+		Eccentricity    0.46
+		ArgOfPericenter 37
+		MeanAnomaly     49
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 128311"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    840     # M.sin(i) = 2.63 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD128311.html"
+
+	EllipticalOrbit {
+		Period          1.1335
+		SemiMajorAxis   1.01
+		Eccentricity    0.21
+		ArgOfPericenter 143
+		MeanAnomaly     232
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 27442"   # Eps Ret
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    410     # M.sin(i) = 1.28 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD27442.html"
+
+	EllipticalOrbit {
+		Period          1.1604
+		SemiMajorAxis   1.18
+		Eccentricity    0.07
+		ArgOfPericenter 114
+		MeanAnomaly     82
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 210277"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    390     # M.sin(i) = 1.24 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD210277.html"
+
+	EllipticalOrbit {
+		Period          1.1926
+		SemiMajorAxis   1.097
+		Eccentricity    0.45
+		ArgOfPericenter 179
+		MeanAnomaly     98
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 19994"   # 94 Cet
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    640     # M.sin(i) = 2 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD19994.html"
+
+	EllipticalOrbit {
+		Period          1.243
+		SemiMajorAxis   1.3
+		Eccentricity    0.2
+		ArgOfPericenter 57
+		MeanAnomaly     167
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 20367"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    340     # M.sin(i) = 1.07 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD20367.html"
+
+	EllipticalOrbit {
+		Period          1.3689
+		SemiMajorAxis   1.25
+		Eccentricity    0.23
+		ArgOfPericenter 228
+		MeanAnomaly     186
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 114783"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    290     # M.sin(i) = 0.9 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD114783.html"
+
+	EllipticalOrbit {
+		Period          1.3717
+		SemiMajorAxis   1.2
+		Eccentricity    0.1
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 147513"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    320     # M.sin(i) = 1 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD147513.html"
+
+	EllipticalOrbit {
+		Period          1.4795
+		SemiMajorAxis   1.26
+		Eccentricity    0.52
+		ArgOfPericenter 275
+		MeanAnomaly     275
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 137759"   # Iot Dra
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    2750     # M.sin(i) = 8.64 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HIP75458.html"
+
+	EllipticalOrbit {
+		Period          1.5076
+		SemiMajorAxis   1.34
+		Eccentricity    0.71
+		ArgOfPericenter 9
+		MeanAnomaly     52
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 222582"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1620     # M.sin(i) = 5.11 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD222582.html"
+
+	EllipticalOrbit {
+		Period          1.5661
+		SemiMajorAxis   1.35
+		Eccentricity    0.76
+		ArgOfPericenter 16
+		MeanAnomaly     142
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 65216"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    390     # M.sin(i) = 1.21 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD65216.html"
+
+	EllipticalOrbit {
+		Period          1.6786
+		SemiMajorAxis   1.37
+		Eccentricity    0.41
+		ArgOfPericenter 108
+		MeanAnomaly     100
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 160691"   # Mu Ara
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    540     # M.sin(i) = 1.7 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD160691.html"
+
+	EllipticalOrbit {
+		Period          1.7448
+		SemiMajorAxis   1.48
+		Eccentricity    0.31
+		ArgOfPericenter 317
+		MeanAnomaly     331
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"c" "HD 160691"   # Mu Ara
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    320     # M.sin(i) = 1 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD160691.html"
+
+	EllipticalOrbit {
+		Period          3.5592
+		SemiMajorAxis   2.3
+		Eccentricity    0.8
+		ArgOfPericenter 96
+		MeanAnomaly     341
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 141937"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    3080     # M.sin(i) = 9.7 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD141937.html"
+
+	EllipticalOrbit {
+		Period          1.7884
+		SemiMajorAxis   1.52
+		Eccentricity    0.41
+		ArgOfPericenter 158
+		MeanAnomaly     193
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 41004"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    730     # M.sin(i) = 2.3 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD41004A.html"
+
+	EllipticalOrbit {
+		Period          1.7933
+		SemiMajorAxis   1.31
+		Eccentricity    0.39
+		ArgOfPericenter 294
+		MeanAnomaly     157
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 47536"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1580     # M.sin(i) = 4.96 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD47536.html"
+
+	EllipticalOrbit {
+		Period          1.9497
+		SemiMajorAxis   1.61
+		Eccentricity    0.2
+		ArgOfPericenter 95
+		MeanAnomaly     333
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 23079"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    830     # M.sin(i) = 2.61 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD23079.html"
+
+	EllipticalOrbit {
+		Period          2.0218
+		SemiMajorAxis   1.65
+		Eccentricity    0.1
+		ArgOfPericenter 154
+		MeanAnomaly     174
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 186427"   # 16 Cyg B
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    540     # M.sin(i) = 1.69 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/16CygB.html"
+
+	EllipticalOrbit {
+		Period          2.1874
+		SemiMajorAxis   1.67
+		Eccentricity    0.67
+		ArgOfPericenter 135
+		MeanAnomaly     93
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 4208"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    250     # M.sin(i) = 0.8 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD4208.html"
+
+	EllipticalOrbit {
+		Period          2.2237
+		SemiMajorAxis   1.67
+		Eccentricity    0.05
+		ArgOfPericenter 338
+		MeanAnomaly     313
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 114386"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    320     # M.sin(i) = 0.99 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD114386.html"
+
+	EllipticalOrbit {
+		Period          2.3874
+		SemiMajorAxis   1.62
+		Eccentricity    0.28
+		ArgOfPericenter 285
+		MeanAnomaly     348
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 222404"   # Gam Cep
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    510     # M.sin(i) = 1.59 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/gamma-Ceph.html"
+
+	EllipticalOrbit {
+		Period          2.4703
+		SemiMajorAxis   2.03
+		Eccentricity    0.2
+		ArgOfPericenter 226
+		MeanAnomaly     77
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 213240"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1430     # M.sin(i) = 4.5 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD213240.html"
+
+	EllipticalOrbit {
+		Period          2.6037
+		SemiMajorAxis   2.03
+		Eccentricity    0.45
+		ArgOfPericenter 263
+		MeanAnomaly     9
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 10647"   # q1 Eri
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    290     # M.sin(i) = 0.91 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD10647.html"
+
+	EllipticalOrbit {
+		Period          2.8474
+		SemiMajorAxis   2.1
+		Eccentricity    0.18
+		ArgOfPericenter 149
+		MeanAnomaly     112
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 10697"   # 109 Psc
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1950     # M.sin(i) = 6.12 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD10697.html"
+
+	EllipticalOrbit {
+		Period          2.9511
+		SemiMajorAxis   2.13
+		Eccentricity    0.11
+		ArgOfPericenter 219
+		MeanAnomaly     36
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 95128"   # 47 UMa
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    810     # M.sin(i) = 2.54 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/47Uma.html"
+
+	EllipticalOrbit {
+		Period          2.9815
+		SemiMajorAxis   2.09
+		Eccentricity    0.061
+		ArgOfPericenter 51
+		MeanAnomaly     33
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"c" "HD 95128"   # 47 UMa
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    240     # M.sin(i) = 0.76 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/47Uma.html"
+
+	EllipticalOrbit {
+		Period          7.102
+		SemiMajorAxis   3.73
+		Eccentricity    0.1
+		ArgOfPericenter 6
+		MeanAnomaly     25
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 190228"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1590     # M.sin(i) = 4.99 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD190228.html"
+
+	EllipticalOrbit {
+		Period          3.0856
+		SemiMajorAxis   2.31
+		Eccentricity    0.43
+		ArgOfPericenter 148
+		MeanAnomaly     99
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 114729"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    260     # M.sin(i) = 0.82 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD114729.html"
+
+	EllipticalOrbit {
+		Period          3.0978
+		SemiMajorAxis   2.08
+		Eccentricity    0.31
+		ArgOfPericenter 19
+		MeanAnomaly     341
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 111232"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    2160     # M.sin(i) = 6.8 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD111232.html"
+
+	EllipticalOrbit {
+		Period          3.1294
+		SemiMajorAxis   1.97
+		Eccentricity    0.2
+		ArgOfPericenter 59
+		MeanAnomaly     99
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 2039"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1540     # M.sin(i) = 4.85 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD2039.html"
+
+	EllipticalOrbit {
+		Period          3.2651
+		SemiMajorAxis   2.19
+		Eccentricity    0.68
+		ArgOfPericenter 286
+		MeanAnomaly     213
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 136118"
+{
+	Texture "browndwarf.jpg"
+	Emissive true
+	# M.sin(i) is so close to 13, true mass is likely to exceed brown dwarf limit
+
+	Mass    3780     # M.sin(i) = 11.9 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD136118.html"
+
+	EllipticalOrbit {
+		Period          3.3117
+		SemiMajorAxis   2.335
+		Eccentricity    0.366
+		ArgOfPericenter 273
+		MeanAnomaly     284
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 50554"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1560     # M.sin(i) = 4.9 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD50554.html"
+
+	EllipticalOrbit {
+		Period          3.5017
+		SemiMajorAxis   2.38
+		Eccentricity    0.42
+		ArgOfPericenter 192
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 196050"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    950     # M.sin(i) = 3 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD196050.html"
+
+	EllipticalOrbit {
+		Period          3.5291
+		SemiMajorAxis   2.5
+		Eccentricity    0.28
+		ArgOfPericenter 247
+		MeanAnomaly     143
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 216437"   # Rho Ind
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    670     # M.sin(i) = 2.1 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD216437.html"
+
+	EllipticalOrbit {
+		Period          3.5428
+		SemiMajorAxis   2.7
+		Eccentricity    0.34
+		ArgOfPericenter 102
+		MeanAnomaly     240
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 216435"   # Tau1 Gru
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    470     # M.sin(i) = 1.49 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD216435.html"
+
+	EllipticalOrbit {
+		Period          3.9505
+		SemiMajorAxis   2.7
+		Eccentricity    0.34
+		ArgOfPericenter 134
+		MeanAnomaly     214
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 106252"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    2170     # M.sin(i) = 6.81 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD106252.html"
+
+	EllipticalOrbit {
+		Period          4.1068
+		SemiMajorAxis   2.61
+		Eccentricity    0.54
+		ArgOfPericenter 199
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 23596"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    2290     # M.sin(i) = 7.19 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD23596.html"
+
+	EllipticalOrbit {
+		Period          4.2656
+		SemiMajorAxis   2.72
+		Eccentricity    0.314
+		ArgOfPericenter 63
+		MeanAnomaly     350
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 145675"   # 14 Her
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    1550     # M.sin(i) = 4.89 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/Gl614.html"
+
+	EllipticalOrbit {
+		Period          4.7997
+		SemiMajorAxis   2.85
+		Eccentricity    0.38
+		ArgOfPericenter 328
+		MeanAnomaly     39
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 39091"   # Pi Men
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    3290     # M.sin(i) = 10.35 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD39091.html"
+
+	EllipticalOrbit {
+		Period          5.6504
+		SemiMajorAxis   3.29
+		Eccentricity    0.62
+		ArgOfPericenter 335
+		MeanAnomaly     259
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 72659"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    810     # M.sin(i) = 2.55 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD72659.html"
+
+	EllipticalOrbit {
+		Period          5.9822
+		SemiMajorAxis   3.24
+		Eccentricity    0.18
+		ArgOfPericenter 211
+		MeanAnomaly     262
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 70642"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    640     # M.sin(i) = 2 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD70642.html"
+
+	EllipticalOrbit {
+		Period          6.1081
+		SemiMajorAxis   3.3
+		Eccentricity    0.1
+		ArgOfPericenter 151
+		MeanAnomaly     327
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 33636"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    2950     # M.sin(i) = 9.28 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD33636.html"
+
+	EllipticalOrbit {
+		Period          6.7003
+		SemiMajorAxis   3.56
+		Eccentricity    0.53
+		ArgOfPericenter 150
+		MeanAnomaly     49
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 22049"   # Eps Eri
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    270     # M.sin(i) = 0.86 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/eps-Eri.html"
+
+	EllipticalOrbit {
+		Period          6.8504
+		SemiMajorAxis   3.3
+		Eccentricity    0.608
+		ArgOfPericenter 172
+		MeanAnomaly     347
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"c" "HD 22049"   # Eps Eri
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    30     # M.sin(i) = 0.1 jupiters
+	Radius  56000
+
+	InfoURL "http://www.obspm.fr/encycl/eps-Eri.html"
+
+	EllipticalOrbit {
+		Period          280
+		SemiMajorAxis   40
+		Eccentricity    0.3
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 30177"
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    2920     # M.sin(i) = 9.17 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/HD30177.html"
+
+	EllipticalOrbit {
+		Period          7.7198
+		SemiMajorAxis   3.86
+		Eccentricity    0.3
+		ArgOfPericenter 137
+		MeanAnomaly     8
+	}
+
+	RotationPeriod 10     # guess
+}
+
+"b" "HD 190360"   # Gliese 777
+{
+	Texture "jupiterlike.jpg"
+
+	Mass    420     # M.sin(i) = 1.33 jupiters
+	Radius  70000
+
+	InfoURL "http://www.obspm.fr/encycl/Gl777A.html"
+
+	EllipticalOrbit {
+		Period          10.6831
+		SemiMajorAxis   4.8
+		Eccentricity    0.48
+		ArgOfPericenter 36
+		MeanAnomaly     91
+	}
+
+	RotationPeriod 10     # guess
+}
+
