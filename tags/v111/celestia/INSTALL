@@ -1,0 +1,31 @@
+Celestia Install instructions for UNIX
+--------------------------------------
+
+You need to have the following components installed before Celestia
+will build: OpenGL (tested with Mesa 3.4), glut, libjpeg, and libpng.
+
+Then, assuming you've collected all the necessary libraries, here's
+what you need to do to build and run Celestia:
+
+	configure
+	make
+	cp src/celestia .
+	./celestia
+
+The cp command should really be automatic, but I'm not quite there yet.  It's
+very important run Celestia from the base directory in which it was unpacked;
+otherwise, it won't find the configuration and data files.
+
+There are two versions of Celestia which can be built--the default version
+uses GLUT and has no GUI.  The other version uses Gtk+ to provide a basic
+menu bar similar to the one in Celestia for Windows.  To build Celestia with
+Gtk+ support, run configure with --enable-gtk:
+
+	configure --enable-gtk
+
+The GtkGLArea widget is required in order build Celestia with Gtk+.  It can
+be downloaded from http://www.student.oulu.fi/~jlof/gtkglarea/
+
+--Chris Laurel
+claurel@www.shatters.net
+
