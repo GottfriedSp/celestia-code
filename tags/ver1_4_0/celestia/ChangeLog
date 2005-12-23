@@ -1,0 +1,911 @@
+Celestia Revision History
+-------------------------
+
+1.00
+* Initial public release
+
+
+1.01
+* Added more realistic and aesthetically pleasing ring illumination function
+* Made planets project shadows onto their rings (requires multitexturing)
+* Detect and use ARB_multitexture extension
+* Some configuration parameters now read from a file
+* Support for multiple solar system catalog files
+* Split solar system files into solarsys.ssc and extrasolar.ssc
+* Added Help/License menu
+* Added simple camera orbit mode
+* Fixed up parsing and printing of catalog numbers--still kludgy though
+
+
+1.02
+* Made Celestia icon appear in corner of window.  Whee.
+* Fixed an extremely subtle numerical precision bug which manifested itself in
+  a number of ways:  jittering when following small objects, incorrect
+  targeting of small objects with goto, occasional flashes when closely
+  approaching an object, and probably other things as well.
+* Reversed rotation directions when orbiting--it's much more intuitive now
+* Added an exponential dolly capability to the camera
+* Double-clicking will now center on the selected object
+* Fixed bug in elliptical orbit calculation
+* When orbits are displayed, the Orbit for the selected object is highlighted
+* Incorporated Scott Hudson's asteroid geometry data for Toutatis, Kleopatra,
+  and Geographos.
+* Fixed problems with disappearing labels and with misplaced labels for
+  extrasolar planets
+* Eliminated 'sticking' when mouse buttons released outside of Celestia window
+* Added Real Time option to Time menu
+* Reversed planet rotation direction so it's correct.  Oops.
+* Added about a dozen extrasolar systems from Jean Schneider's catalog
+* Create two new textures for extrasolar planets
+* Moved Selection class outside of Simulation, as it's generally useful
+
+
+1.03
+* Rotating the camera is now more responsive to mouse movement
+* 'Infinite mouse' hack allows rotating and dollying without having to pick up
+  the mouse and reposition the cursor in the window
+* Fixed z ordering for planets and satellites so small that they only appear
+  as points.  Small satellites will no longer get obscured by planets they're
+  in front of.
+* Apparent magnitude calculation for planets now takes into account phase
+* At close range, stars are now rendered as textured sphere meshes.
+* Choosing stars by catalog number no longer selects a star even when the specified
+  star doesn't exist.
+* Added labels for stars; the list of labelled stars is read from celestia.cfg
+* Cleaned up vecmath.h, added consts and reference parameters where appropriate
+* Cleaned up StarNameDatabase
+
+
+1.04
+* Start out at the moon instead of in deep space
+* Made picking of planets work properly for planets with disc sizes greater than one
+  pixel.
+* Added call to glDeleteTextures to Texture class destructor
+* Added bump mapping.  Uses DOT3 bump mapping and only works on GeForce cards
+  right now.
+* Enabled user control of per-pixel lighting.
+* Menu checked state for label options synced with renderer state.
+* Added a context menu that appears when an object is right clicked.
+* Celestia now uses texture coordinates from 3DS files
+* Added 3DS model of Eros based on NEAR laser rangefinder data
+* Added 3DS models of Deimos, Phobos, and numerous other asteroids and
+  small moons based on Phil Stooke's models
+* Replaced TriangleList class with much more flexible VertexList
+* Introduced support for compressed textures; texture compression is specified
+  on a per texture basis in .ssc files.
+* Added a reverse time option
+* Added an OpenGL Driver Info item to the help menu
+
+
+1.05
+* Made per-pixel lighting work for planets without bump maps too
+* Allow user control of magnitude of faintest visible stars
+* Added support for PNG textures
+* Improved console: enabled backspace, relocated text entry, code cleanup, ...
+* Corrected star positions by converting them from equatorial to ecliptical
+  coordinates.
+* Eliminated case sensitivity when selecting objects by name
+* New ring texture for Saturn with separate reflectance and opacity
+* Ring textures now specified in .ssc files instead of hardcoded
+* Implemented date/time selector dialog box
+* Changed the mouse wheel function from zoom to dolly.  Zoom is now controlled by
+  shift left-dragging the mouse.  For mice without wheels, control left-dragging
+  will dolly.
+* Fixed orbit and dolly functions to work in follow mode
+* Improved rendering of objects at close range: less clipping, extra sphere LOD.
+* Fixed bug that caused irregular objects to be displayed at half their actual size
+* ESC now cancels goto and follow instead of exiting app.
+* Fixed orbital calculations for planets so their positions are now closer to
+  reality.
+* Completed extrasolar planets database; it now contains all known planets
+  around normal stars
+* Mir!
+* MeanAnomaly field in .ssc files was incorrectly called TrueAnomaly; this
+  is fixed, and solar system parser now also accepts MeanLongitude in orbital
+  elements section.
+* Epoch can now be specified for orbital elements.  Default is J2000.
+
+
+1.06
+* Made Alt+F4 exit the app.
+* Fixed text rendering to be pixel-accurate; labels and console text are now
+  crisper and don't have any missing pixels (need to test on more graphics
+  chipsets.)
+* Updated parser to handle negative numbers.  Big oops.
+* Corrected errors and omissions in extrasolar planets catalog.
+* Added locations menu for saving and recalling favorite places.
+* Added intro message.
+* Removed stars without spectral class info from database.
+* Included support for cloud maps
+* Added extrasolar planets from the ESO's April 4th announcement
+* Axial rotation for stars
+* Alleviated clipping of very distant stars (Deneb was missing from Earth's
+  sky due to this bug.)
+* Increased depth buffer precision for planet rendering--this should improve
+  the quality of rendering with 16-bit z buffers
+* Added option to render constellation diagrams
+* Use strips instead of lists for rendering spheres
+* Enabled keyboard control of zoom with home and end
+* Implemented basics of linear scripting system
+* Run a script at startup; the script filename can be set in the config file
+
+Code revisions:
+* Converted Simulation class to use Julian days instead of seconds as internal
+  time units.
+* Eliminated brain damaged observer methods in Simulation
+* Cleaned up Console class
+
+
+1.07
+* More corrections to planetary orbital calculations
+* Accept LongOfPericenter as well ArgOfPericenter in solar system catalog files
+* Updated parser to accept C-style string escapes
+* Render the Milky Way and other galaxies
+* Added more constellations
+* Display constellation names
+* Cleaned up render menu
+* Added FPS counter
+* Implemented basic WWW info feature for planets and stars
+* New script commands: renderflags, labels, orbit
+* Implemented a scripted demo mode
+* Placed ISS in Earth orbit
+
+
+1.08
+* Initial UNIX port
+* Created GLUT based front-end
+* Created abstract Timer class with Windows and UNIX implementations
+
+
+1.09
+* UNIX port fixes: eliminated friend templates in Quaternion, added -lm to
+  configure.in, added missing return type for methods in Console and Overlay
+
+
+1.0.10
+* Fixed problem with ring shadow texture by setting wrap mode to GL_CLAMP_TO_EDGE
+* Corrected scale of ring shadow to match size of planet
+* Switched to octree based visibility determinination algorithm for
+  stars.  The result is better rendering performance, especially when
+  many stars are displayed.  The octree algorithm is also lag free, meaning
+  that all star "popping" is eliminated.
+* Added setvisibilitylimit command for scripting.
+* Fonts now selectable in celestia.cfg
+* Added more and fewer visible stars options to render menu
+* Fixed BigFix precision bug that appeared only with certain compiler versions.
+* UNIX version: Enabled arrow keys and home/end in UNIX version
+* UNIX version: Implemented frame rate counter
+* UNIX version: Added mouse wheel support
+* UNIX version: Fixed bug that caused picking to happen while dragging mouse
+* UNIX version: Added more compiler optimization flags to Makefile
+* UNIX version: Ctrl-Q now exits program
+* UNIX version: Fixed vertically flipped textures
+* UNIX version: Initial Gtk+ version, with rudimentary GUI
+
+
+1.1.0
+* Added RotationPhase field to solar system bodies; tweaking this makes sure
+  that the right part of the planet is dark at a given time.
+* Changed axial tilt of Earth so that the North Pole is illuminated in summer,
+  not winter.
+* Added option to render celestial coordinate sphere
+* Added geosynchronous follow mode
+* Added synchronous command to enable geosynchronous follow mode
+* Fixed disappearing stars when modifying field of view
+* Fixed bug reading angle in galaxies file
+* Made it possible to select an object by 'path' e.g. Sol/Earth/Moon
+* Bound { and } keys to control ambient light level
+* Windows version: added solar system browser window
+* Windows version: added star browser window
+* Windows version: separated update from redraw so animation no longer occurs
+  when dragging modal dialogs over the view window
+* Windows version: made context menus work when running fullscreen
+
+Code:
+* Fixed bug in quaternion to matrix conversion; conversion was returning the
+  matrix representation of the conjugate.
+* Moved common UI code into CelestiaCore
+
+
+1.1.1
+* Added spectral type field to star browser
+* Fixed bug that was causing garbled fonts in some cases
+* Added missing minus character to default label font
+* Many more options for goto--pick a specific long and lat, set coordinate
+  frame, choose up vector
+* Changed camera rotation interpolation--now use quaternion slerp
+* Constrained parallaxes of stars which are components of multistar systems;
+  binary stars now actually close to each other and not just when viewed
+  from Earth.
+* Fixed another stupid sign problem--north celestial pole is now positive,
+  not negative y.  This change should be invisible to a user.
+* Replaced welcome message with logo texture
+
+Code:
+* Moved selection info code from Simulation to CelestiaCore
+* Fixed bug in Texture destructor
+
+
+1.1.2
+* Replaced single catalog number with separate entries for HD and HIP numbers
+* Expanded star name database and rewrote star name code to be less strict
+  when matching names.
+* Added track mode
+* Changed displayed units of distance and velocity
+* Fixed picking of stars so it works properly at close distances
+* Fixed bug that caused solar systems not to be displayed when another star
+  was nearby (this made it impossible to visit the planets of Gliese 876)
+* Fixed inverted bump maps
+* Now use exponential interpolation during goto movement.
+* New Jupiter texture based on Cassini images
+* Added a tour guide feature
+* Added more constellation diagrams
+* Windows version: save and restore window size settings in registry
+* Windows version: added toggle between GMT and local time
+* Windows version: added keyboard command mnemonics to menus
+* Windows version: InstallShield setup
+* Windows version: added controls help dialog
+* UNIX version: implemented find object and about dialogs (Gnome/Gtk only)
+	
+Code:
+* Moved star browser and solar system browser code into separate modules
+* Fixed DPRINTF macro so it's not broken in g++
+
+
+1.1.3
+* Added city light map for night side of Earth
+* Specular reflections for Earth's oceans
+* Haze effects for planets and moons with atmospheres
+* Optimized star rendering--faster, uses substantially less memory
+  when many stars visible
+* Changed minimum limiting magnitude from 8.0 to 12.0
+* Support for nVidia vertex programs
+* Eliminated 'seams' in normalization cube maps used for lighting
+* View frustum culling of planets and nearby stars
+* Fixed clipping that occurred when close to planets
+* Fixed depth buffer precision problems (most apparent with spacecraft)
+* Tidied up display of speed, distance, and star/planet statistics.
+* Changed how modes work--goto won't break follow and sync follow modes
+  any more
+* Fixed underlit planets on GL implementations without EXT_rescale_normal
+* Type K, M, R, S, and N stars now cast a red tinted light on their planets
+* New Earth texture
+* Print less debugging spew on startup
+* Integrated Colin Walters endianness fixes
+* Windows version: info about max texture size and number of simultaneous
+  textures added to OpenGL Info dialog.
+* New objects: Comet Borrelly, the giant Kuiper Belt object 2001 KX76,
+  and the Hubble Space Telescope
+	
+Code:
+* Rewrote texture and model managers
+* Cleaned up simulation.cpp to use frames of reference and eliminated a lot
+  of special case code for the different 'modes'
+* Stopped using the Intel JPEG library on Windows; instead, the Independent
+  JPEG Group's library is now used on all platforms.
+
+
+1.1.4
+* Fixed text rendering problems that appeared on Matrox cards
+* Windows version: fixed bug that broke web info for stars
+* Windows version: improved web info feature so that it doesn't launch a new
+  instance of IE every time.
+* Added eight new extrasolar planets announced 15 Oct
+* Fixed goto command so that it doesn't ever place you inside a planet
+* Allow navigation with number pad
+* Much greater resolution in planet meshes
+* Implemented atmospheric effects
+* Modified center so it does not change the frame of reference--will prevent
+  suddenly leaving the ground when used on the surface of a planet.
+* Changed rendering order so star and constellation labels are obscured by
+  planets.
+* Corrected satellite obliquities--they should have been relative to their
+  planets equatorial plane.
+* Eliminated premature clipping of irregular bodies at close range
+* Fixed problem with lighting on S3 Savage4
+* Fixed clipping bug with fields of view greater than 45 degrees
+* Introduced support for custom orbital calculations
+* Much more accurate orbital calculations for Earth and Moon; eclipses now
+  occur at the correct time.  Also, introduced accurate calculations for
+  other solar system planets except Pluto.
+* Require solar system catalog files have orbital elements in an
+  EllipticalOrbit group.
+* Added four more asteroids with models by Scott Hudson: KY26, Castalia,
+  Bacchus, and Golevka
+* Added keyboard commands to toggle night side lights (Ctrl+L) and
+  atmospheres (Ctrl+A)
+* Added a 'Goto Object' dialog box, which lets you specify an object name
+  and distance, longitude, and latitude.
+* Implemented a screen capture feature
+* Windows version: added a star browser option to display just those stars
+  with planetary systems.
+* Windows version: fixed bug in Set Time dialog that wouldn't allow setting
+  both the date and the time of day.
+* Windows version: added basic joystick support.
+* Windows version: fixed 'jumping' that occurred when using Goto or Follow
+  from popup menu.
+* Windows version: added 'Set to Current Time' button in Set Time dialog
+* Windows version: fixed selection of planetary satellites via context menu
+* Windows version: made tab, return, and escape work properly in modeless
+  dialogs
+* Unix version: created installer (Deon Ramsey)
+
+Code:
+* Rewrote texture font code; texfont.cpp is gone, everything now in
+  texturefont.cpp
+
+
+1.2.0
+* Fixed problem with image capture function that saved skewed images for some
+  windows widths.
+* Changed field of view display to use minutes and seconds
+* Fixed display of time scale when time is reversed
+* Fixed jittering labels for stars distant from the sun
+* Fixed depth ordering problem that caused satellites to appear in front of
+  the horizon when viewed from the surface of Earth
+* Made the correct hemisphere of the Moon face Earth
+* Fixed Earth's rotation so that sunrise and sunset times are correct
+* Fixed picking so that clicking on a distant planet will never select one of
+  its satellites.
+* Improved orbit calculation code to properly compute eccentric anomaly
+* Render orbit outlines behind planets instead of in front of them
+* Made it possible for clouds to move relative to the ground
+* Eliminated star haloes that were visible in daylight
+* Added Uranus's ring system
+* Added Shrox's Mars Global Surveyor and Mars Odyssey models
+* Windows: save rendering and label settings
+* Windows: added movie capture feature
+* Windows: fixed disappearing mouse cursor bug
+* Windows: added slider for controlling number of stars displayed by
+  star browser.
+* Windows: vastly improved full screen support
+* Windows: fixed non-functioning Fewer Stars menu option
+* Unix: fixed problems with '--enable-debug' under automake (dramsey)
+* Unix: Enhanced autoconfigure to enable automated distribution build, as well
+        as building the buildstardb program used to create stars.dat (dramsey)
+* Unix: Fixed Problem with --enable-debug=no acting as if --enable-debug=yes
+        had been given. (dramsey)
+* Unix: Changed --enable-gtk into --with-gtk, and made it automatic if Gtk+ and
+        GtkGLArea is present. (dramsey)
+* Unix: Inserted testing code for GtkGLArea into configure.in (dramsey)
+* Unix: Integrated a current gnome macros package. (dramsey)
+* Removed many errors and compiler warnings (dramsey)
+* Label Galaxies option. (dramsey)
+* Unix Gtk : Added several menu options already present in the windows version.
+             (dramsey)
+* Unix Gtk : Fixed problem where giving keyboard commands wasn't updating
+	     the toggle menu gadgets. (dramsey)
+* Unix : Handle timezones correctly. (dramsey)
+* Fixed constellation typo: Cyngi -> Cygni
+* Much better Data analysis and Correction for the buildstardb program
+  leading to better data in stars.dat . Verbosity of the buildstardb program
+  may now be controlled by commandline argument. (dramsey)
+* Improved solar system catalog file format so it's easier to install add-ons
+* Scan extras directory for solar system catalog files
+* Fixed pixel shader rendering path so it uses star light color
+* Added support for textures in 3DS models
+* Fixed locations menu
+* Improved locations menu so that position and frame of reference are saved
+  and restored.
+* Fixed broken script commands: setposition, setorientation, and move
+* Display the names of tracked and followed objects
+* Windows: replaced proliferating render and label options in menu with
+  a single modeless dialog.
+* Fixed period and rotation of Phoebe
+
+	
+1.2.1
+* Unix: configure.in changes to better find OpenGL libraries by Bruckner.
+* Added accurate orbital calculations for Galilean satellites.
+* Added tolerance parameter for picking to make picking objects in a narrow
+  narrow field of view work better.
+* New texture for Miranda courtesy of Bruckner.
+* Windows: Fixed bug that caused a crash when canceling the view options dialog
+* Windows: Fixed crash that occurred when recalling a location with
+  no selection
+
+	
+1.2.2
+* Improved find algorithm for starnames, and combined names from hdnames.dat
+  into starnames.dat. Also added several additional names and variant spellings
+  from my Star Atlas into starnames.dat (whose format has been completely
+  revamped). (dramsey)
+* Unix GTK: Got Ctrl-Q to exit the Program properly. (dramsey)
+* Unix GTK: Capture Filenames now starts up with a proper filename, remembers
+            the last directory, and complains about bad filenames. (dramsey)
+* Added 'verbose' option, and supressed most non-error type messages unless
+  verbose is set. (dramsey)
+* Made picking exact for oblate planets
+* Optimized rendering of planet meshes
+* Switched to high levels of details when camera is near surface of a planet
+* Improved the appearance of the corona around stars
+* Fixed specular lighting for 3DS meshes, but correcting the mapping of 3DS
+  shininess to OpenGL specular exponents.
+* Multi Resolution Texturing. (dramsey)
+* Unix: Much improved recognition of missing packages in configure. (dramsey)
+* Added rendering of eclipse shadows
+* Implemented longitude of axis for planet rotation elements
+* Corrected inclinations of Saturn (now rings appear at proper tilt when viewed
+  from Earth), Uranus, and Neptune.
+* Added accurate orbital calculations for the eight largest moons of Saturn
+* Textures for Ariel, Umbriel, Titania, and Umbriel from Bruckner.
+* Improved planet labeling: less clutter, plus labels are displayed for distant
+  objects at high zoom levels.
+* Fixed rendering of ring systems so that planets with both rings and
+  a cloud layer are rendered correctly.
+* Added accurate orbital calculations for the five largest moons of Uranus
+* Added option to render stars as points (for a less fuzzy appearance)
+* Corrected sizing of planets' shadows on their ring systems
+* Enabled used of extremely high resolution textures through splitting into
+  subtextures.
+* Corrected orbital elements for Ceres, Pallas, Juno, and Vesta.
+* Added Ikeya-Zhang to solar system
+* Fixed position calculation for orbits with 0.98 < e < 1
+* Enabled rendering of 3DS meshes with transparent parts
+* Unix Gtk: New Renderer Options
+* Fixed colors on the Hubble model
+* Fixed some clipping problems with 3DS meshes caused by bad center calculation
+* Enhanced Locations menu to support full manipulation and categorization of
+  saved locations.
+
+
+1.2.3
+* Fixed bug in texturefont.cpp that produce an error with some STL
+  implementations (VS.NET, HPUX)
+* Added elapsed time counter to movie recording UI
+* Added support for orbits interpolated from sampled positions
+* Fixed 'crosshair' appearance of eclipse shadows on some cards
+* Enforced power of two texture size requirement--eliminates texture loading
+  crashes on some systems
+* UNIX: Modified GL extension handling code to make it possible to compile
+  against Mesa 4 headers.
+
+
+1.2.4
+* Fixed bug that caused alpha blending to always be enabled for 3DS meshes
+* Fixed sign error in that caused some orbits to be retrograde
+* Fixed rendering of night lights to ignore ambient color (keeps night lights
+  from being visible on lit side of planet.)
+* Improved precision to eliminate position drifting because of rounding errors
+  (was apparent when orbiting within 1km of an object)
+* Replaced perfectly spherical Comet Halley with an irregular model
+* Added object classifications and label coloring based on them
+* Created new 'phase-lock' coordinate system
+* Created new 'chase' coordinate system
+* Unix Gtk: removed bug in Text enter mode. (dramsey)
+* Unix Gtk: Menus for new Labels. (dramsey)
+* Unix Gtk: Star Browser Body Types. (dramsey)
+* Unix Gtk: Correct Underlines for Menus. (dramsey)
+* Guess Body Types more accurately. (dramsey)
+* Support hyperbolic orbits
+* Improved algorithm for calculating positions on highly eccentric orbits
+* Added setambientlight scripting command
+* Enabled rendering of satellite orbits
+* Windows: added open script option to file menu
+* Changed orbit and dolly functions so they operate with respect to the
+  current reference object instead of the selection.
+* Made Goto command automatically switch to follow mode
+* Fixed customorbit.cpp to compile on HP/UX
+* Fixed appearance of galaxies when viewed from inside an atmosphere
+* Removed duplicate entry for Iota Horologii (HR 810) in exoplanet catalog
+* Unix: fixed GL extension code so it's possible to compile with Mesa 4 headers
+* Unix: fixed byte swapping code
+* Fixed bug that caused distant stars to disappear when viewed at some angles
+* Unix Gtk: removed problem preventing ShowClouds from working. (dramsey)
+* Unix Gtk: Options Dialog. (dramsey)
+* Celestia Watcher extended. (dramsey)
+* Unix Glut: Keyboard handling corrected. (dramsey)
+* Galaxy labels were being placed incorrectly. (dramsey)
+* Fixed slowdown while rendering shadows on TNT, Rage Pro cards
+* Model precession of rotation axis
+* New script commands: set, gotoloc, chase, lock
+* Fixed orbits of major planets so that they don't get wacky far into the
+  future or past
+* Windows: fixed image capture in Windows so it doesn't screw up texture loading
+* Display time to arrival when travelling
+* Added preloadtex command for scripting
+* Enforce a maximum time rate of 1e15 times normal
+
+
+1.2.5
+* Implemented text-based auxilliary star catalogs
+* Added orientation property for planets
+* Corrected rotation of Toutatis
+* Improved specular highlights on planets (use local viewer model)
+* Added constellation boundaries
+* Fixed z fighting when cloud layers are used with vertex shaders
+* Added Christopher Andre's eclipse finder for windows
+* Fixed writing of locations file so locations still work after restarting
+* Comets
+* Added newly discovered extrasolar planets
+* Added InfoURL field for objects in .ssc files
+* Numerous Gtk UI fixes (details?)
+* Fixed 'squareness' of planets and moons viewed at a distance
+* Middle mouse button toggles between 45 degree and last field of view
+* Added FOV to set command, so scripts can set the field of view.
+* Made ring shadows optional
+* Added distance filtering for stars
+* Encode/decode Tycho catalog numbers, to support extended star database
+* Fixed Moon's orbit so it doesn't crash into the Earth far in the future
+* Improved vertex shader illumination for planetary rings
+* Better text display from .cel scripts
+* Added text "flash" messages for many keyboard commands
+* Fixed Windows Solar System Browser to allow arbitrary depth tree
+* Added shadows cast by rings onto planets
+* Fixed lots of bugs with sampled orbits (.xyz files)
+* Added RotateAcceleration field to config file; allows adjustment of
+  navigation control sensitivity
+* Improved accuracy of orbital calculations; VSOP87 series for all planets
+* Added beginning/ending fields to definitions in .ssc files; allows
+  setting finite lifespans for objects
+* Made galaxies pickable
+* Added view frustum culling of galaxies, for much improved performance
+* Allow date strings Beginning, Ending, and Epoch fields of .ssc files
+* Fixed incorrect occlusion of small satellites orbiting close to planets
+* New set of constellation figures
+* Sync'd mouse functions in Windows and Linux versions of Celestia
+* Linux: fixed dialing ranges in set time dialog
+* Fixed texture lookup to use higher res textures if a low res one isn't
+  available
+* Made steering keys on keypad turn the camera at a rate proportional to the
+  field of view
+* Added 'automag' option to automatically adjust the limiting magnitude based
+  on the field of view (i.e. fainter stars become visible when the fov is
+  decreased)
+* Fixed haloes around bright stars so they're fixed in size regardless of
+  field of view
+* New colors for celestial grid and constellation figures
+* Tuning of Gnome GUI: underlined key accelerators, enabled operation of all
+  dialogs and menus with ALT <key>, arrow keys, and Tab
+* Linux: GUI now synced with current state of pixel/vertex shaders 
+* New keyboard bindings:
+  Ctrl+Y    : automag toggle
+  Ctrl+T    : toggle display of comet tails
+  Ctrl+B    : constellation boundaries toggle
+  !         : use current time
+  Backspace : clear selection
+* Reversed more/fewer stars keys ([ and ]) to be consistent with more/less
+  ambient light keys
+* Added support for multiple extras directories
+* Reduced minimum field of view down to 3 arcsec
+* Fixed glitch with center command that appeared under Linux and on Windows
+  when building with VS.NET
+* Cleaned up OpenGL extension initialization
+* Significantly improved the reliability of object selection via mouse
+  click, notably for small fields of view in the arcsec range. 
+* Fixed the 'move' script command
+* New script commands: setfaintestautomag45deg {magnitude float}, 
+  lookback {} 
+* [,] keys now adjust the limiting magnitude at 45 degrees 
+  field of view, if automag is ON. Values displayed via flash messages  
+* Associated the 'looking back' operation  with the '*' key shortcut
+* Fixed bug in orbits of Galilean moons
+* Corrected equatorial planes and rotation offsets for the major planets
+* Linux: Added KDE interface, all features of the GTK interface are 
+  available (except for the Tour Guide), new features include:
+   - Bookmarks / URLs;
+   - History navigation;* Improved drag and drop of cel:// URLs on Windows
+   - Configurable shortcuts and tool bar;
+   - Contextual menus;
+   - Saved Settings and Preferences.
+  Integration with KDE:
+   - New Mime Type application/x-celestia-script for *.cel files;
+   - *.cel files and cel:// URLs are associated with Celestia, if no instance
+     of Celestia is running when the file or URL is activated it will be
+     started and the script will be run or the location set to that of the URL.
+     If an instance is already running the script will be run in that instance
+     or that instance's location will be changed to match the URL.
+* Added drag and drop and copy to clipboard for cel:// URLs on Windows
+* Improved drag and drop of cel:// URLs on Windows
+
+1.3.0
+* Integrated more of Grant Hutchinson's corrections for the orientations of
+  solar system bodies
+* Updates for asteroids and comets from Grant Hutchinson:
+   - Added Phil Stooke's textures for the asteroids Ida and Gaspra
+   - Fixed mirror-reversal of Ida and Gaspra meshes (Grant Hutchinson)
+   - Use orbital elements valid for the Galileo encounters of Ida and Gaspra
+   - Corrected rotation parameters
+* Made name matching for galaxies case-insensitive
+* Corrected orbits of Uranians satellites Miranda, Ariel, Umbriel, Titania and
+  Oberon.
+* cel:// URL fixes
+   - Added support for relative URLs
+   - Improved drag and drop support on Windows
+   - Browser integration on Windows: clicking on a cel:// URL launches Celestia
+   - Better time precision
+* Added new keyboard commands for dealing with light time delay
+   - ? : show light time delay between current position and selected object
+   - - (minus) : compensate for light time : subtract light travel time to
+     selected object from the current time
+* KDE interface: add subtract light time button to Set Time dialog
+* Added cubic interpolation option for sampled trajectories (.xyz files)
+* Added NormalMap field for .ssc files
+* Prevent crashing when CompressTexture true is specified for an already compressed texture.
+* KDE: Implement eclipse finder
+   - Eclipse finder code separated into UI and platform-independent parts
+* Added basic support for rendering nebula as 3ds meshes.
+* Modified format of galaxies file to handle other deep sky objects as well
+* Added OpenCluster objects
+* Implemented 'markers'
+   - Selection is highlighted with a marker
+   - Markers may also be set on objects using the right-click context menu
+   - Added mark/unmark commands for scripts
+   - Bound Ctrl+K to toggle display of markers
+   - Added flash messages indicating on|off status of markers 
+   - Implemented markers into KDE interface	
+* Added triangle-accurate picking of mesh objects
+* Multiview
+   - Ctrl+R : split view vertically
+   - Ctrl+U : split view horizontally
+   - TAB    : cycle active view
+   - DEL    : delete active view
+   - Ctrl+D : delete all views except active one
+   - Views may be resized by dragging on borders
+   - Multview functions also available in the view menu
+* Eliminated eclipse shadows appearing on wrong side of planet
+* Added support for specular and bump map effects across a wider range
+  of graphics hardware.
+   - Introduced notion of a render path
+   - Ctrl+V changed to cycle render path instead of toggle vertex shader
+   - Added IgnoreGLExtensions directive for celestia.cfg
+* Added track command for script
+* Fixed eclipse shadow z-fighting artifacts
+* Fixed vertical mirroring of textures on 3DS models
+* Fixed problems with bump mapping
+* Enabled loading of .cel scripts through the Windows or KDE shell
+* New directory structure for add-ons; meshes, textures, and other media
+  may now be located withing an add-on subdirectory.
+* Added texture for Eros
+* Added separate cloud and surface textures for Venus
+* New "invisible" class for solar system objects
+* Fixed crashes that occurred when viewing ringed planets on older hardware
+* Got rid of three zeros after decimal point when displaying time rate
+* Updated configuration files for new versions of autoconf
+
+1.3.1
+* Improved inclusion of light travel delay, also in KDE time setting dialog 
+* Fixed lookback command for subsequent changes of target speed
+* Allow wildcard character * inplace of extension for texture filenames
+* Fix bump mapping (again)
+* Use standard normal maps instead of x-reversed ones
+* Compute the radii of stars more accurately by using bolometric magnitudes
+* Permit star names to be defined within .stc files
+* Fixed near clipping of small deep sky objects
+* Windows: added auto magnitude toggle to render menu
+* KDE: added popup error notifications
+* Allow oblate planets to have atmospheres
+* Corrected specular highlights; abrupt cutoff near terminator eliminated
+* Fixed 'hole in the sky' bug
+* Allow sunset color to be specified in .ssc files
+* Improved rendering of objects in daytime skies
+* Bound Ctrl+P to mark/unmark selection
+* Implemented tab completion of star, planet, and deep sky object names
+* Implemented new, scientifically accurate Pluto-Charon textures
+* Windows: bound Ctrl+C to copy cel:// URL to clipboard
+* Modified the way field of view works: compute the field of view based
+  on distance to screen, monitor resolution, and view size; don't attempt
+  to maintain a constant vertical FOV when splitting views.
+* Implemented alternate surfaces for planets
+* Added overlay textures that are applied on top of other surface maps
+* Bound + to toggle limit of knowledge maps
+* Improved estimates for stellar rotation period; previously all stars
+  were assigned the same rotation rate as the sun.
+* Added locations--labels of planetary surface features
+* Bound & to toggle display of location labels
+* Added a locations dialog for controlling the display of locations
+* Allow orbit paths to be turned on independently for all object classes
+* Added a 'scaled disc' style for rendering stars
+* Bound shift+arrow keys to orbit reference object
+* Added unmarkall command for scripting
+* Added missing render flags for script commands: automag, atmospheres, grid
+* Added a MeshCenter field for properly position and rotation of 3DS meshes
+* Implemented virtual textures, for ultra-high resolution texture mapping of
+  planets.
+* Added textures for Hyperion and Proteus
+* Made cancel script command stop motion, tracking, and any object-relative
+  coordinate system.
+* Adjusted estimates for radii and rotation periods of extrasolar planets;
+  rotation rates account (somewhat) for the effects of tidal despinning. 
+* Fixed a bug that was causing precision loss in orientation values; this fixes
+  some of the jerkiness apparent at very low fields of view.
+* Corrected radii of Uranus's rings
+* Added ring system for Neptune
+* Corrected errors in Callisto's orbit
+* Modify the right-drag rotation rate based on the distance between the
+  camera and the selection.
+* Made ambient light work for bump mapped objects in the vertex program/DOT3
+  render path.
+* Bound Shift+C to center/orbit.  This places the selection in middle of
+  the view while keeping the reference object at the same point in the view.
+* Added locations-labels of all world capitals (240) with importance
+  weights calculated from their numbers of inhabitants
+* Added solar system location labels
+
+1.3.2
+* Added support for extended character sets (most of WGL4) and UTF-8 encoded
+  strings
+* Updated info display to show apparent size of selected object
+* Enable tab completion of location names
+* Introduced support for JPL ephemeris files
+* Fixed crash in Windows star browser that occurred after changing the number
+  of stars and pressing return.
+* Fixed bug that made stars and galaxies appear square when certain nebulae
+  were in view.
+* Made the delete button in the Windows bookmarks organizer actually work
+* Updated orbits for Amalthea and Phoebe
+* Fixed seams in Jupiter and Phobos textures
+* Spacecraft orbit paths adaptively sampled for smoother results
+* Eliminated obscuring of location labels that occurred low view aspect ratios
+* Added models of comet Halley and the small moons Pandora and Larissa
+* Added limit of knowledge masks for the Galilean moons
+* Changed spectral class of carbon stars to C, which supercedes and combines
+  R and N
+* Lua scripting additions
+  * View management commands
+  * Image capture commands
+  * Made setrenderflags and setlabelflags accept a table
+  * Orbit and locations settings
+  * observer:cancelgoto
+* Made the cursor shape change to the resize icon when positioned over view
+  borders
+* Added a new 3D file format: cmod, the Celestia model format
+* Documented the fields in celestia.cfg with extensive comments
+* Added newly discovered extrasolar planet HD 330075 b
+* Added Cassini and Huygens models and trajectories
+* Fixed crashing bug in the eclipse finder
+* Changed default start location to Earth
+* Revised some erroneous spectral classes in star catalog
+* Made solar system objects occlude labels of more distant objects
+* Implemented an algorithm for importance weights to avoid overlapping or
+  too crowded location labels for Mars, Venus and the Moon
+* Added new textures for Titan based on recent imaging from the Cassini
+  mission 
+* Improved depth sorting so that hidden surface removal works properly for
+  overlapping objects
+* Added theoretical estimates of oblateness and rotation rate for extrasolar
+  planets
+* Replaced old Io and Europa textures with improved versions
+* Added disposition modifier for ssc objects to control what happens when
+  an object with the same name and parent already exists.  The three possible
+  behaviors are Add (the default), Replace, and Modify.
+* WINDOWS: Limited CPU usage when main window is minimized
+* WINDOWS: Changed preferred z-buffer depth from 16 to 24 bits to reduce
+  z-fight artifacts.
+* Fixed labels and info text so it looks crisp when multisample antialiasing
+  is enabled.
+* Eliminated flickering of location labels
+* WINDOWS: Save texture resolution setting between sessions
+
+1.4.0
+* New stars.dat format with HD catalog numbers and parallax errors omitted
+* Added catalog cross indexes for HD and SAO catalogs
+* Fixed bugs in parsing catalog numbers
+* Added white dwarf temperatures and  spectral types DA, DB, DC, DO, DQ, and DZ
+* Added handling for partial spectral types where one or both of the subclass
+  and luminosity class are unknown
+* Permit extended star attributes in .stc files: mesh, texture, rotation
+  elements, semiaxes
+* Support multiple star systems of any complexity with orbits and barycenters
+* Changed .stc loader so that a star definition with a duplicate catalog
+  number replaces the previous definition
+* Made catalog numbers optional in .stc files; stars can be defined without
+  having to create fake catalog numbers
+* Star colors now chosen based on temperature; either 'classic' and black body
+  colors may be selected
+* Bound % key to toggle between star color tables
+* Fixed black holes: infinite radius bug gone, rendered just as a plain black
+  sphere
+* Added comprehensive catalog of all knows stars within 25 light years of the
+  Sun, including orbits for multiple star systems
+* Created new command line tools for building binary star databases
+* Removed limitation that two or more solar systems couldn't be shown
+  simultaneously
+* Show light from multiple nearby stars illuminating planets
+* Implemented new GLSL render path; NVIDIA combiners and GeForceFX paths
+  deprecated.
+* Display UTF-8 superscript digits in some star names
+* Updated the Titan texture. It accomodates all published high resolution 
+  imaging from the Cassini mission until and including the flyby of 03/31/05. 
+* Updated the Iapetus texture. It accomodates all published high resolution
+  imaging from the Cassini mission, including also a unique hires photo taken 
+  in "Saturn shine". 
+* Added catalogs of 163 visual and 39 spectroscopic binary orbits,
+  respectively, (Söderhjelm 1999, Pourbaix 2000) with known primary/secondary
+  mass ratios.
+* Added an extended and precise data base of 942 galaxies 
+  (Steinicke's rev. NGC/IC, 2005) with a magnitude cutoff Bmag < 12. 
+* Included the commented PERL scripts used to extract and adapt the binary
+  orbit and  galaxy data from published professional catalogs.
+* Added --extrasdir command line option for specifying additional directories
+  to search for add-ons
+* Allowed time scale to be modified while simulation is paused
+* Replaced Windows date picker with a custom one that can be used to set dates
+  prior to 1752.
+* Fixed a bug in the Windows time picker that was causing the set time to be
+  off by however many seconds the dialog was active.
+* Added parent field for stars in celx scripting's getinfo command
+* GTK+ front-end overhaul
+   - source split into multiple files
+   - performance work to minimize number of preference resyncs
+   - redesigned interface to use GtkActions and GtkUIManager (XML)
+   - added preference saving to file
+   - commented heavily
+   - new about dialog
+   - made non-modal: GoTo, View Options, Tour Guide, Browsers, EclipseFinder
+   - changes to allow for compilation on Windows
+   - greek letters in Star Browser names
+   - added tab-completion support in overlay entry
+   - replaced deprecated widgets in several dialogs
+   - new GTK save/open dialog
+   - added "copy" and "open" url functions
+   - updated GConf schema with new options
+   - fixed automake bug where GConf schema would always install
+   - removed linking against glut for no reason
+* Implemented complete precision catalog (Steinicke's revised NGC/IC, 2005) of
+  10610 galaxies with 
+   - distance information from  four catalogs ( 6 methods ), 
+   - <= 4 alternate names, 
+   - info-URLs, 
+   - absolute magnitudes and 
+   - correct sizes & orientations in space, as calculated from catalog
+     parameters. 
+* Included well commented Perl script (deepsky.pl) as documentation. The used distance determination method is indicated in catalog for each galaxy.
+* Updated binary star data base (visualbins.stc, spectbins.dsc) and respective
+  PERL catalog extraction scripts (visualbins.pl, spectbins.pl), such as to eliminate double occurences wrto nearstars.stc (, which remained unaffected).
+* Added much improved galaxy templates.
+* Implemented galaxy coloration based on hue profiles from true color
+  photographic imaging. Being older than spirals, elliptical galaxies have a somewhat redder coloration.
+* Implemented a realistic relative apparent brightness display scheme for
+  galaxies.
+* Added apparent magnitude display as function of distance on canvas.
+* Added display of DSO Type (Galaxy,...) and Hubble subtype in case of
+  galaxies.
+* Changed the galaxy label color from yellow to blue-green for better
+  visibility.
+* Did extensive octree rebuilding. Culling of deep sky objects is logarithmic
+  now, enabling support for very large catalogs with little performance expenses.
+* Performed optimized tuning of octree parameters that practically recovers
+  the "pre-galactic" performance, despite a large data base of 10610 galaxies.
+* Added support for multiple names of deep sky objects and implemented
+  non linear keyboard selection of names with corresponding tab completion, etc., like with the rest of the celestial bodies.
+* Replaced deep sky catalog class with a more complex database, following the
+  original star database layout. This allows for more sophisticated and fast treatment of massive catalogs.
+* Enabled very fast search of close-to-viewer deep sky objects.
+* Implemented brightness corrections involving the angle between 1-2 surface
+  normals and the viewing angle, such that the brightness distribution
+  gets ~ uniform  for all galaxy orientations and Hubble types. This also
+  avoids excessive, unnatural brightness effects in edge-on views.
+* Galaxies get brighter with decreasing observer distance according to
+  realistic human eye sensitivity profile.
+* Brightness display optionally coupled with Automag scheme.
+* Enabled very fast picking of deep sky objects.
+* Placed galaxy templates in 'models/' directory.
+* Added various crucial fixes in galaxy.cpp,
+   - factor 2 was missing in the 'size' definition via the radius such that
+     distances among DSO's were grossly incorrect;
+   - fixed correct ordering of (non-commuting) operations in matrix m.
+     This gave incorrect galaxy orientations;
+   - To save space and to improve display: generate neat spherical E0
+     template from S0 disk template via rescaling by (1.0f, 3.8f, 1.0f);
+   - fixed wrong x,y alignment of elliptical rescaling.
+* Added code to ease compilation with newer Xcode versions (Macintosh).
+* Updated src/celengine/Makefile.am for Linux building. 
+* Introduced a new cel function => renderflags {set "nebulae"}.
+* Reduced the default value of 'faintestAutoMag45deg' from 8.5 to 7.0.
+* Fixed the visibility of the Milky Way during day-time and the abrupt
+  appearance or disappearance of galaxies near the day-night border.
+* Enabled "geosynchronous Follow" (key 'Y') also for selected DSO's
+  (yet it does not seem to be very useful...).
+* Moved render flag check in the code such that labels can be drawn even if
+  e.g. renderGalaxy flag is turned off.
+* Suppressed apparent magnitude display for galaxy add-ons, lacking
+  specification of an absolute magnitude (absMag) input value.
+* Deleted various source code files that became superfluous.
+* Improved comet display. Introduced a neat scheme implementing comet tail
+  fading (between 4 and 6 AU for Sol). Systems with several suns and
+  luminosities different from the solar one are accounted for. 
+* Implemented a new, simple scheme avoiding overcrowded galaxy labels.  
+  Their "importance"  is sorted according to apparent magnitude! Thus the
+  labels of the brightest galaxies pop up first upon zooming in... 
+* Fixes/workarounds for OpenGL 2.0 render paths on both nVidia and ATI cards.
