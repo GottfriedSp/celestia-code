@@ -1,0 +1,1276 @@
+# Data for our solar system.
+
+"Mercury" "Sol"
+{
+	Texture "mercury.*"
+	Radius 2440
+
+	CustomOrbit "vsop87-mercury"
+	EllipticalOrbit {
+	Period            0.2408
+	SemiMajorAxis     0.3871
+	Eccentricity      0.2056
+	Inclination       7.0049
+	AscendingNode    48.33167
+	LongOfPericenter 77.456
+        MeanLongitude   252.251
+	}
+
+	RotationPeriod 1407.509405
+	Obliquity         7.01
+	EquatorAscendingNode 48.42
+	RotationOffset 291.20
+
+	Albedo            0.06
+}
+
+AltSurface "limit of knowledge" "Sol/Mercury"
+{
+	Texture "mercury.*"
+	OverlayTexture "mercury-lok-mask.png"
+}
+
+"Venus" "Sol"
+{
+	Texture "venussurface.*"
+	# BumpMap "venusbump.*"
+	HazeColor [ 0.5 0.35 0.2 ]
+	HazeDensity 0.35
+	Radius 6052
+
+	Atmosphere {
+		Height 60
+		Lower [ 0.8 0.8 0.5 ]
+		Upper [ 0.6 0.6 0.6 ]
+		Sky [ 0.8 0.8 0.5 ]
+		CloudMap "venus.jpg"
+		CloudHeight 50
+		CloudSpeed  90
+	}
+
+	CustomOrbit "vsop87-venus"
+	EllipticalOrbit {
+		Period            0.6152
+		SemiMajorAxis     0.7233
+		Eccentricity      0.0068
+		Inclination       3.3947
+		AscendingNode     76.681
+		LongOfPericenter 131.533
+	        MeanLongitude    181.979
+	}
+
+	RotationPeriod  5832.479839
+	Obliquity       178.78
+	EquatorAscendingNode 300.22
+	RotationOffset       137.45
+
+	Albedo            0.77
+}
+
+"Earth" "Sol"
+{
+	Texture "earth.*"
+	NightTexture "earthnight.*"
+	
+	# SpecularTexture "earth-spec.*"
+	Color [ 0.85 0.85 1.0 ]
+	SpecularColor [ 0.8 0.8 0.85 ]
+	SpecularPower 25.0
+	HazeColor [ 1 1 1 ]
+	HazeDensity 0.3
+	Radius 6378.140  # equatorial
+	# Oblateness 0.0034
+
+	Atmosphere {
+		Height 60
+		Lower [ 0.43 0.52 0.65 ]
+		Upper [ 0.26 0.47 0.84 ]
+		Sky [ 0.40 0.6 1.0 ]
+		Sunset [ 1.0 0.6 0.2 ]
+		CloudHeight 7
+		CloudSpeed 65
+		CloudMap "earth-clouds.*"
+
+		Mie 0.001
+		MieAsymmetry -0.25
+		Rayleigh [ 0.001 0.0025 0.006 ]
+		MieScaleHeight 12
+	}
+
+	CustomOrbit "vsop87-earth"
+	EllipticalOrbit {	
+		Period            1.0000
+		SemiMajorAxis     1.0000
+		Eccentricity      0.0167
+		Inclination       0.0001
+		AscendingNode   348.739
+		LongOfPericenter 102.947
+	        MeanLongitude   100.464
+	}
+
+#       Very approximate precession for Earth
+#	PrecessingRotation
+#	{
+#		Period           23.9344694 # 23.93419
+#		Inclination     -23.4392911
+#		Offset          280.5    # offset at default epoch J2000
+#		PrecessionPeriod 26000
+#	}
+
+	RotationPeriod   23.9344694 # 23.93419
+	Obliquity        -23.4392911
+	RotationOffset   280.5    # offset at default epoch J2000
+
+	Albedo            0.30
+}
+
+
+"Moon" "Sol/Earth"
+{
+	Texture "moon.*"
+	BumpMap "moonbump.*"
+	BumpHeight 3.5
+	Radius   1737.53
+	# Oblateness 0.002
+
+	InfoURL "http://www.nineplanets.org/luna.html"
+
+	CustomOrbit "moon"
+	EllipticalOrbit {
+		Period           27.321661
+		SemiMajorAxis    384400
+		Eccentricity     0.054900
+		Inclination      5.15
+	}
+
+	OrbitFrame {
+		EquatorJ2000 { Center "Sol/Earth" }
+	}
+
+	UniformRotation
+	{
+	    Inclination        23.45
+            AscendingNode       0.0
+            MeridianAngle      38
+	}
+
+	LunarLambert 1.0
+
+	Albedo           0.12
+}
+
+
+"Mars" "Sol"
+{
+	Texture "mars.*"
+	# Texture "mars8k.dds"
+	BumpMap "marsbump.*"
+	BumpHeight 2.5
+	
+	Color   [ 1 0.75 0.7 ]
+	HazeColor [ 1 1 1 ]
+	HazeDensity 0.45
+	Radius 3396 # equatorial
+	# Oblateness 0.0069
+
+	Atmosphere {
+		Height 30
+		Lower [ 0.8 0.6 0.6 ]
+		Upper [ 0.7 0.3 0.3 ]
+		Sky [ 0.83 0.75 0.65 ]
+                Sunset [ 0.7 0.7 0.8 ] 
+                # Slightly bluish sunset, as seen in true color pictures
+                # from Pathfinder
+
+		Mie 0.0024
+		MieAsymmetry -0.15
+		Rayleigh [ 0.0010 0.0006 0.0003 ]
+		Absorption [ 0 0 0 ]
+		MieScaleHeight 20
+	}
+
+	CustomOrbit "vsop87-mars"
+	EllipticalOrbit
+	{
+	Period            1.8809
+	SemiMajorAxis     1.5237
+	Eccentricity      0.0934
+	Inclination       1.8506
+	AscendingNode     49.479
+	LongOfPericenter 336.041
+        MeanLongitude    355.453
+	}
+
+	RotationPeriod    	 24.622962
+	Obliquity         	 26.72
+	EquatorAscendingNode	 82.91
+	RotationOffset    	136.005
+
+	Albedo            0.150
+}
+
+
+"Phobos" "Sol/Mars"
+{
+	Mesh "phobos.cmod"
+	Texture "phobos.*"
+	Radius 13.0 # maximum semi-axis
+	MeshCenter [ -0.233 -0.156 -0.168 ]
+
+	EllipticalOrbit
+	{
+	Period         0.318910
+	SemiMajorAxis  9377.2
+	Eccentricity   0.0151
+	Inclination    1.075
+	AscendingNode  128.694   # J2000
+	ArgOfPericenter 213.804  # J2000
+	MeanAnomaly    191.771   # J2000
+	}
+
+	Obliquity		  0.0
+	RotationOffset	      	354.2
+
+	Albedo         0.07
+}
+
+"Deimos" "Sol/Mars"
+{
+	Mesh "deimos.cmod"
+	Texture "deimos.*"
+	Radius 7.9 # maximum semi-axis
+	MeshCenter [ -0.299 -0.284 0.369 ]
+
+	EllipticalOrbit
+	{
+	Period            1.262441
+	SemiMajorAxis     23463.2
+	Eccentricity      0.00033
+	Inclination       1.793
+	AscendingNode    25.229
+	ArgOfPericenter 208.213 
+	MeanAnomaly     344.128
+	}
+
+	Obliquity		  0.9
+	EquatorAscendingNode	183.0
+	RotationOffset		214.7
+
+	Albedo         0.08
+}
+
+"Jupiter" "Sol"
+{
+	Texture "jupiter.*"
+	HazeColor [ 0.4 0.45 0.5 ]
+	HazeDensity 0.3
+
+	Radius 71492 # equatorial
+	Oblateness 0.0649
+
+	CustomOrbit "vsop87-jupiter"
+	EllipticalOrbit
+	{
+	Period           11.8622
+	SemiMajorAxis     5.2034
+	Eccentricity      0.0484
+	Inclination       1.3053
+	AscendingNode   100.556
+	LongOfPericenter 14.7539
+        MeanLongitude    34.404
+	}
+
+	Atmosphere {
+		Height 300
+		Lower [ 0.7 0.6 0.5 ]
+		Upper [ 0.5 0.45 0.4 ]
+		Sky [ 0.8 0.8 0.5 ]
+                Sunset [ 1.0 0.6 0.2 ]
+	}
+
+	RotationPeriod         9.927953 # System II (for GRS)
+	# RotationPeriod       9.92425  # System III (radio emissions)
+	Obliquity              2.222461 # 1.82246 # 2.22246
+	EquatorAscendingNode -22.203    # -1.87785 # -22.203
+	RotationOffset        12        # for correct location of GRS 
+	                                # (equal to 101 minus current W longitude of GRS)
+	# RotationOffset     305.40     # correct System III prime meridian
+
+	Albedo 0.51
+}
+
+
+"Amalthea" "Sol/Jupiter"
+{
+	Texture "amalthea.*"
+	Color   [ 0.63 0.45 0.35 ]
+	Mesh "amalthea.cmod"
+	Radius    134 # maximum semi-axis
+	MeshCenter [ -13.616 -0.448 -4.436 ]
+
+	EllipticalOrbit
+	{
+	Epoch      2452583.763194445 # 2002 Nov 5 06:19UT (Galileo encounter)
+	Period          0.498179     # mean
+	SemiMajorAxis   181994.78    # at epoch
+	Eccentricity    0.0045045    # at epoch 
+	Inclination     0.384285     # at epoch
+	AscendingNode   220.288958   # at epoch
+	ArgOfPericenter 301.622765   # at epoch
+	MeanAnomaly     315.352094   # at epoch
+	}
+
+	Obliquity		  0.0
+	RotationOffset		252.1
+
+	Albedo          0.06
+}
+
+"Io" "Sol/Jupiter"
+{
+	Texture "io.*"
+	Radius   1821.6
+
+	CustomOrbit "io"
+	EllipticalOrbit
+	{
+	Epoch 2443000.00038375
+	Period         1.769138
+	SemiMajorAxis  421600
+	Eccentricity   0.0041
+	Inclination    0.040
+	AscendingNode    312.981
+	LongOfPericenter  97.735
+	MeanLongitude    106.724
+	}
+
+	Obliquity		  0.0
+	RotationOffset		220.8
+
+	Albedo         0.61
+}
+
+AltSurface "limit of knowledge" "Sol/Jupiter/Io"
+{
+	Texture "io.*"
+	OverlayTexture "io-lok-mask.png"
+}
+
+"Europa" "Sol/Jupiter"
+{
+	Texture "europa.*"
+	Radius   1560.8
+
+	CustomOrbit "europa"
+	EllipticalOrbit
+	{
+	Epoch 2443000.00038375
+	Period         3.551810
+	SemiMajorAxis  670900
+	Eccentricity   0.0101
+	Inclination    0.470
+	AscendingNode    101.087
+	LongOfPericenter 155.512
+	MeanLongitude    176.377
+	}
+
+	Obliquity		  0.0
+	RotationOffset 		 56.2
+
+	Albedo         0.64
+}
+
+AltSurface "limit of knowledge" "Sol/Jupiter/Europa"
+{
+	Texture "europa.*"
+	OverlayTexture "europa-lok-mask.png"
+}
+
+"Ganymede" "Sol/Jupiter"
+{
+	Texture "ganymede.*"
+	Radius   2631.2
+
+	CustomOrbit "ganymede"
+	EllipticalOrbit
+	{
+	Epoch 2443000.00038375
+	Period         7.154553
+	SemiMajorAxis  1070000
+	Eccentricity   0.0015
+	Inclination    0.195
+	AscendingNode    119.841
+	LongOfPericenter 188.831
+	MeanLongitude    121.206
+	}
+
+	Obliquity		  0.1
+	EquatorAscendingNode	161.6
+	RotationOffset		262.1
+
+	Albedo         0.42
+}
+
+AltSurface "limit of knowledge" "Sol/Jupiter/Ganymede"
+{
+	Texture "ganymede.*"
+	OverlayTexture "ganymede-lok-mask.png"
+}
+
+"Callisto" "Sol/Jupiter"
+{
+	Texture "callisto.*"
+	Radius   2410.3
+
+	CustomOrbit "callisto"
+	EllipticalOrbit
+	{
+	Epoch 2443000.00038375
+	Period        16.689018
+	SemiMajorAxis  1883000
+	Eccentricity   0.007
+	Inclination    0.281
+	AscendingNode    323.265
+	LongOfPericenter 335.933
+	MeanLongitude     85.091
+	}
+
+	Obliquity		  0.4
+	EquatorAscendingNode	160.6
+	RotationOffset		120.1
+
+	Albedo         0.20
+}
+
+AltSurface "limit of knowledge" "Sol/Jupiter/Callisto"
+{
+	Texture "callisto.*"
+	OverlayTexture "callisto-lok-mask.png"
+}
+
+"Saturn" "Sol"
+{
+	Texture "saturn.*"
+	Color [ 1.0 1.0 0.85 ]
+	HazeColor [ 0.0 0.0 1 ]
+	HazeDensity 0.25
+	Radius 60268 # equatorial
+	Oblateness 0.0980
+
+	CustomOrbit "vsop87-saturn"
+	EllipticalOrbit
+	{
+	Period           29.4577
+	SemiMajorAxis     9.5371
+	Eccentricity      0.0542
+	Inclination       2.4845
+	AscendingNode   113.715
+	LongOfPericenter 92.432
+        MeanLongitude    49.944
+	}
+
+	Atmosphere {
+		Height 300
+		Lower [ 0.8 0.75 0.65 ]
+		Upper [ 0.6 0.55 0.45 ]
+		Sky [ 0.8 0.8 0.5 ]
+	}
+
+	RotationPeriod        10.65622 # System III (magnetic field)
+	Obliquity             28.049   # 28.052   # old value: 26.73
+	EquatorAscendingNode 169.530   # 168.8112 # 169.53
+        RotationOffset       358.922   # correct System III prime meridian
+
+	Albedo            0.50
+
+	Rings {
+		Inner   74500  # includes some ringlets inside edge of C ring at 74660
+		Outer  140220
+		Texture "saturn-rings.png"
+	}
+}
+
+"Prometheus" "Sol/Saturn"
+{
+	Texture	 	"prometheus.*"
+	Mesh		"prometheus.cmod"
+	Radius    74 # maximum semi-axis
+	MeshCenter [ 0.75 -2.68 1.064 ]
+
+	EllipticalOrbit
+	{
+	Epoch		2453005.5   # 2004 Jan 1 00:00UT
+	Period		0.6130
+	SemiMajorAxis	139380
+	Eccentricity	0.0023
+	Inclination	0.0056
+	AscendingNode	226.1099
+	LongOfPericenter 23.3280 
+	MeanLongitude	266.2144
+	}
+
+	RotationEpoch		2453005.5   # 2004 Jan 1 00:00UT
+	RotationOffset  	86
+
+	Albedo 0.6
+}
+
+"Pandora" "Sol/Saturn"
+{
+	Texture	 	"asteroid.jpg"
+	Mesh		"pandora.cmod"
+	Radius		57 # maximum semi-axis
+	MeshCenter [ 0.692 -1.454 -0.422 ]
+
+	EllipticalOrbit
+	{
+	Epoch		2453005.5   # 2004 Jan 1 00:00UT
+	Period		0.6285
+	SemiMajorAxis	141710
+	Eccentricity	0.0042
+	Inclination	0.0522
+	AscendingNode	290.0163
+	LongOfPericenter 10.4899
+	MeanLongitude	212.6961     
+	}
+
+	RotationEpoch		2453005.5   # 2004 Jan 1 00:00UT
+	RotationOffset          33
+
+	Albedo 0.5
+}
+
+"Epimetheus" "Sol/Saturn"
+{
+	Texture	 	"epimetheus.*"
+	Mesh		"epimetheus.cmod"
+	Radius    72 # maximum semi-axis
+	MeshCenter [ -5.196 -2.241 -1.878 ]
+
+	EllipticalOrbit
+	{
+	Epoch		2453005.5   # 2004 Jan 1 00:00UT
+	Period		0.6945      # 0.6943: period set to Janus/Epimetheus average
+	SemiMajorAxis	151410
+	Eccentricity	0.0098
+	Inclination	0.3541
+	AscendingNode	45.5973
+	LongOfPericenter 358.5774
+	MeanLongitude	306.0531
+	}
+
+	RotationEpoch		2453005.5   # 2004 Jan 1 00:00UT
+	RotationOffset  	126
+
+	Albedo 0.5
+}
+
+AltSurface "limit of knowledge" "Sol/Saturn/Epimetheus"
+{
+	Texture "epimetheus-lok.*"
+}
+
+"Janus" "Sol/Saturn"
+{
+	Texture	 	"janus.*"
+	Mesh		"janus.cmod"
+	Radius    96 # maximum semi-axis
+	MeshCenter [ -1.552 1.358 2.257 ]
+
+	EllipticalOrbit
+	{
+	Epoch		2453005.5   # 2004 Jan 1 00:00UT
+	Period		0.6945      # 0.6947: period set to Janus/Epimetheus average
+	SemiMajorAxis	151460
+	Eccentricity	0.0067
+	Inclination	0.1649
+	AscendingNode	8.1758
+	LongOfPericenter 248.2856
+	MeanLongitude	131.5137
+	}
+
+	RotationEpoch		2453005.5   # 2004 Jan 1 00:00UT
+	RotationOffset  	312
+
+	Albedo 0.6
+}
+
+"Mimas" "Sol/Saturn"
+{
+	Texture "mimas.*"
+	# Texture "white.jpg"
+	# BumpMap "mimasbump.jpg"
+	# BumpHeight 10.0
+	Color [ 0.75 0.63 0.58 ]
+	BlendTexture true
+	Radius    198.6
+
+	CustomOrbit "mimas"
+	EllipticalOrbit
+	{
+	Period         0.9424218
+	SemiMajorAxis  185520
+	Eccentricity   0.0202
+	Inclination    1.53
+	MeanAnomaly    23
+	}
+
+	Obliquity		  1.5 #J2000.0
+	EquatorAscendingNode	137.8 #J2000.0
+	RotationOffset		190.7 #J2000.0
+
+	Albedo         0.5
+}
+
+AltSurface "limit of knowledge" "Sol/Saturn/Mimas"
+{
+	Texture "mimas.*"
+	OverlayTexture "mimas-lok-mask.png"
+	Color [ 0.75 0.63 0.58 ]
+	BlendTexture true
+}
+
+"Enceladus" "Sol/Saturn"
+{
+	Texture "enceladus.*"
+	Radius     249.4
+
+	CustomOrbit "enceladus"
+	EllipticalOrbit
+	{
+	Period         1.370218
+	SemiMajorAxis  238020
+	Eccentricity   0.0045
+	Inclination    0.02
+	MeanAnomaly    215
+	}
+
+	Obliquity		  0.0
+	RotationOffset		322.9
+
+	Albedo         0.99
+}
+
+"Tethys" "Sol/Saturn"
+{
+	Texture "tethys.*"
+	Radius     529.9
+
+	CustomOrbit "tethys"
+	EllipticalOrbit
+	{
+	Period         1.887802
+	SemiMajorAxis  294660
+	Eccentricity   0.0
+	Inclination    1.09
+	MeanAnomaly    98
+	}
+
+	Obliquity		  0.0
+	RotationOffset		330.6
+
+	Albedo         0.9
+}
+
+"Dione" "Sol/Saturn"
+{
+	Texture "dione.*"
+	Radius     559
+
+	CustomOrbit "dione"
+	EllipticalOrbit
+	{
+	Period         2.736915
+	SemiMajorAxis  377400
+	Eccentricity   0.0022
+	Inclination    0.02
+	MeanAnomaly    310
+	}
+
+	Obliquity		  0.0
+	RotationOffset		317.1
+
+	Albedo         0.7
+}
+
+"Rhea" "Sol/Saturn"
+{
+	Texture "rhea.*"
+	Radius     764
+
+	CustomOrbit "rhea"
+	EllipticalOrbit
+	{
+	Period         4.517500
+	SemiMajorAxis  527040
+	Eccentricity   0.0010
+	Inclination    0.35
+	MeanAnomaly    190
+	}
+
+	Obliquity		  0.0
+	RotationOffset 		195.0
+
+	Albedo         0.7
+}
+
+"Titan" "Sol/Saturn"
+{
+	Texture  "titan.*"
+        Color      [0.96 0.805 0.461 ]
+        # HazeColor [ 0.781 0.629 0.975 ]
+	HazeDensity          0.6
+	Radius            2575
+
+    Atmosphere {
+        Height         500.0
+      	Lower      [ 0.477 0.367 0.211 ]
+	  	Upper      [ 0.96 0.805 0.461 ]
+	  	Sky        [ 0.3 0 0 ]
+      
+      	Mie              0.0001
+      	MieAsymmetry    -0.55
+      	Rayleigh   [ 0.0 0.0 0.00017 ]
+      	Absorption [ 0.000075 0.00030 0.00025 ]
+      	MieScaleHeight 220.0 
+      	CloudHeight    220.0
+      	CloudSpeed      65.0
+      	CloudMap "titan-clouds.*"
+    }
+    
+	CustomOrbit "titan"
+	EllipticalOrbit
+	{
+	Period            15.945421
+	SemiMajorAxis 1221850
+	Eccentricity       0.0292
+	Inclination        0.33
+	MeanAnomaly      120
+	}
+
+	Obliquity		  0.6
+	EquatorAscendingNode	186.6
+	RotationOffset		318.9
+
+	Albedo                    0.21
+}
+
+"Hyperion" "Sol/Saturn"
+{
+	Mesh "hyperion.cmod"
+	Texture "hyperion.*" # Phil Stooke
+	Radius    171 # maximum semi-axis
+	MeshCenter [ -3.424 10.938 4.498 ]
+
+	CustomOrbit "hyperion"
+	EllipticalOrbit
+	{
+	Period        21.276609
+	SemiMajorAxis  1481100
+	Eccentricity   0.1042
+	Inclination    0.43
+	MeanAnomaly    350
+	}
+
+	# The rotation of Hyperion is chaotic; we don't attempt to model
+	# the rotation exactly, but instead use non-zero precession rate to
+	# make the rotation appear somewhat irregular.
+
+	Obliquity       	 61    # pole at time of 
+	EquatorAscendingNode	145    # Voyager 2 encounter
+	RotationPeriod  	120    # 5-day best-fit rotation
+	PrecessionRate  	 51.43 # 7-day wobble in light curve
+
+	Albedo         0.3
+}
+
+AltSurface "limit of knowledge" "Sol/Saturn/Hyperion"
+{
+	Texture "hyperion-lok.*" # Phil Stooke
+}
+
+"Iapetus" "Sol/Saturn"
+{
+	Texture "iapetus.*"
+    Radius     718
+
+	CustomOrbit "iapetus"
+	EllipticalOrbit
+	{
+	Period         79.330183
+	SemiMajorAxis  3561300
+	Eccentricity   0.0283
+	Inclination    7.52
+	MeanAnomaly    245
+	}
+
+	Obliquity		 15.5
+	EquatorAscendingNode	213.7
+	RotationOffset		 14.9
+
+	Albedo         0.2
+}
+
+"Phoebe" "Sol/Saturn"
+{
+	Mesh "phoebe.cmod"
+	Texture "phoebe.*"
+	Radius     110
+
+	EllipticalOrbit
+	{
+	Epoch           2453168.3159722 # 2004 June 11 19:35 (Cassini encounter)
+	Period          548.21          # mean
+	SemiMajorAxis   12915512.0      # at epoch
+	Eccentricity      0.152924      # at epoch
+	Inclination     151.668210      # at epoch
+	AscendingNode    14.381449      # at epoch
+	ArgOfPericenter 281.103195      # at epoch
+	MeanAnomaly      31.776215      # at epoch
+	}
+    
+    RotationPeriod          9.2735 # Bauer et al, Astrophysical Journal 2004; 610(2): L57-L60 
+    Obliquity               8.7    # Porco et al, Science 2005; 307: 1237-42 
+    EquatorAscendingNode  245.3    # Porco et al, Science 2005; 307: 1237-42 
+    RotationOffset        135.0    # approximate, from encounter images 
+
+	Albedo         0.05
+}
+
+
+"Uranus" "Sol"
+{
+	Texture "uranus.*"
+	Color [ 0.75 0.85 1.0 ]
+	HazeColor [ 0.5 0.8 1.0 ]
+	HazeDensity 0.2
+	Radius 25559 # equatorial
+	Oblateness 0.0229
+
+	CustomOrbit "vsop87-uranus"
+	EllipticalOrbit
+	{
+	Period           84.0139
+	SemiMajorAxis    19.1913
+	Eccentricity      0.0472
+	Inclination       0.7699
+	AscendingNode     74.230
+	LongOfPericenter 170.964
+        MeanLongitude    313.232
+	}
+
+	Atmosphere {
+		Height 130
+		Lower [ 0.75 0.85 1.0 ]
+		Upper [ 0.5 0.8 0.9 ]
+		Sky [ 0.6 0.7 0.7 ]
+
+	}
+
+	RotationPeriod        17.24 # System III (magnetic field)
+	Obliquity             97.81
+	EquatorAscendingNode 167.76
+	RotationOffset       331.18 # correct System III prime meridian
+
+	Albedo            0.66
+
+	Rings {
+		Inner  41837
+		Outer  51179
+		Texture "uranus-rings.png"
+	}
+}
+
+
+"Miranda" "Sol/Uranus"
+{
+	Texture "miranda.*"
+	Radius   235.8
+
+	CustomOrbit "miranda"
+	EllipticalOrbit
+	{
+	Period         1.413
+	SemiMajorAxis  129800
+	Eccentricity   0.0027
+	Inclination    4.22
+	MeanAnomaly    120
+	}
+
+	RotationPeriod		 33.92350159 # enforce sync rotation
+	Obliquity		  0.0
+	RotationOffset 		144.3
+
+	Albedo         0.32
+}
+
+AltSurface "limit of knowledge" "Sol/Uranus/Miranda"
+{
+	Texture "miranda.*"
+	OverlayTexture "miranda-lok-mask.png"
+}
+
+"Ariel" "Sol/Uranus"
+{
+	Texture "ariel.*"
+	Radius   578.9
+
+	CustomOrbit "ariel"
+	EllipticalOrbit
+	{
+	Period         2.520
+	SemiMajorAxis  191200
+	Eccentricity   0.0034
+	Inclination    0.31
+	MeanAnomaly    56
+	}
+
+	RotationPeriod		 60.48909292 # enforce sync rotation
+	Obliquity		  0.0
+	RotationOffset 		 18.8
+
+	Albedo         0.39
+}
+
+AltSurface "limit of knowledge" "Sol/Uranus/Ariel"
+{
+	Texture "ariel.*"
+	OverlayTexture "ariel-lok-mask.png"
+}
+
+"Umbriel" "Sol/Uranus"
+{
+	Texture "umbriel.*"
+	Radius   584.7
+
+	CustomOrbit "umbriel"
+	EllipticalOrbit
+	{
+	Period         4.144
+	SemiMajorAxis  266000
+	Eccentricity   0.0050
+	Inclination    0.36
+	MeanAnomaly    280
+	}
+
+	RotationPeriod		 99.46022991 # enforce sync rotation
+	Obliquity		  0.0
+	RotationOffset 		 66.9
+
+	Albedo         0.21
+}
+
+AltSurface "limit of knowledge" "Sol/Uranus/Umbriel"
+{
+	Texture "umbriel.*"
+	OverlayTexture "umbriel-lok-mask.png"
+}
+
+"Titania" "Sol/Uranus"
+{
+	Texture "titania.*"
+	Radius   788.9
+
+	CustomOrbit "titania"
+	EllipticalOrbit
+	{
+	Period         8.706
+	SemiMajorAxis  435800
+	Eccentricity   0.0022
+	Inclination    0.10
+	MeanAnomaly    30
+	}
+
+	RotationPeriod		208.94077099 # enforce sync rotation
+	Obliquity		  0.0
+	RotationOffset 		 97.2
+
+	Albedo         0.27
+}
+
+AltSurface "limit of knowledge" "Sol/Uranus/Titania"
+{
+	Texture "titania.*"
+	OverlayTexture "titania-lok-mask.png"
+}
+
+"Oberon" "Sol/Uranus"
+{
+	Texture "oberon.*"
+	Radius   761.4
+
+	CustomOrbit "oberon"
+	EllipticalOrbit
+	{
+	Period        13.463
+	SemiMajorAxis  583600
+	Eccentricity   0.0008
+	Inclination    0.10
+	MeanAnomaly    150
+	}
+
+	RotationPeriod		323.117567539 # enforce sync rotation
+	Obliquity		  0.0
+	RotationOffset 		168.2
+
+	Albedo         0.23
+}
+
+AltSurface "limit of knowledge" "Sol/Uranus/Oberon"
+{
+	Texture "oberon.*"
+	OverlayTexture "oberon-lok-mask.png"
+}
+
+
+"Neptune" "Sol"
+{
+	Texture "neptune.*"
+	Color [ 0.75 0.75 1.0 ]
+	HazeColor [ 0.6 1 0.75 ]
+	HazeDensity 0.35
+	Radius 24766 # equatorial
+	Oblateness 0.017
+
+	CustomOrbit "vsop87-neptune"
+	EllipticalOrbit
+	{
+	Period           164.793
+	SemiMajorAxis     30.0690
+	Eccentricity      0.0086
+	Inclination       1.7692
+	AscendingNode   131.722
+	LongOfPericenter 44.971
+        MeanLongitude   304.880
+	}
+
+	Atmosphere {
+		Height 130
+		Lower [ 0.6 0.65 1.0 ]
+		Upper [ 0.5 0.55 0.9 ]
+		Sky [ 0.5 0.7 0.9 ]
+	}
+
+	RotationPeriod        16.11 # System III (magnetic field)
+	Obliquity             28.03
+	EquatorAscendingNode  49.235
+	RotationOffset       228.65 # correct System III prime meridian
+
+	Albedo                 0.62
+
+	Rings {
+		Inner  53150
+		Outer  62947
+		Texture "neptune-rings.png"
+	}
+}
+
+"Larissa" "Sol/Neptune"
+{
+	Texture	 	"asteroid.jpg"
+	Mesh		"larissa.cmod"
+	Radius		100 # maximum semi-axis
+	MeshCenter [ 4.564 -0.126 0.302 ]
+
+	EllipticalOrbit
+	{
+	Period		0.554654
+	SemiMajorAxis	73548
+	Eccentricity	0.0014
+	Inclination	0.744	#
+	AscendingNode	324.857	#
+	ArgOfPericenter	215.004	# J2000.0
+	MeanAnomaly     157.543	#
+	}
+
+	Obliquity              	  0.1
+	EquatorAscendingNode 	349.1
+	RotationOffset          165.8
+
+	Albedo 0.056
+}
+
+"Proteus" "Sol/Neptune"
+{
+	Mesh "proteus.cmod"
+	Texture "proteus.*" # Phil Stooke
+	Radius    219 # maximum semi-axis
+	MeshCenter [ -4.146 -0.022 5.153 ]
+
+	EllipticalOrbit
+	{
+	Epoch		2450085.5 # 1996 Jan 3 00:00UT
+	Period		1.122315  # mean
+	SemiMajorAxis	117647    # mean
+	Eccentricity	0.0005    # mean
+	Inclination	1.090     # at epoch
+	AscendingNode	330.943   # at epoch
+	ArgOfPericenter	267.246   # at epoch 
+	MeanAnomaly	213.916   # at epoch 
+	}
+
+	Obliquity              	  0.6
+	EquatorAscendingNode 	331.0
+	RotationOffset       	 97.8
+
+	Albedo         0.061
+}
+
+"Triton" "Sol/Neptune"
+{
+	Texture "triton.*"
+	Radius   1353.4
+
+	Atmosphere {
+		Height 1
+		Lower [ 0.5 0.5 0.5 ]
+		Upper [ 0.5 0.5 0.5 ]
+		Sky [ 0.0 0.0 0.0 ]
+	}
+
+	EllipticalOrbit
+	{
+	Epoch		2447763.5  # 1989 Aug 25 00:00UT (Voyager encounter)
+	Period		5.8768541  #  mean
+	SemiMajorAxis	354765.286 # at epoch
+	Eccentricity	0.00002285 # at epoch
+	Inclination	156.826240 # at epoch
+	#AscendingNode	172.426656 # at epoch
+	AscendingNode	147.899288 # at epoch
+	ArgOfPericenter	293.092400 # at epoch
+	MeanAnomaly	315.726316 # at epoch
+	}
+
+	RotationEpoch	    2447763.5 # 1989 Aug 25 00:00UT (Voyager encounter)
+	Obliquity		156.8 # at epoch
+	EquatorAscendingNode	147.9 # at epoch
+	RotationOffset		 71.5 # at epoch
+
+	Albedo         0.756
+}
+
+AltSurface "limit of knowledge" "Sol/Neptune/Triton"
+{
+	Texture "triton.*"
+	OverlayTexture "triton-lok-mask.png"
+}
+
+"Nereid" "Sol/Neptune"
+{
+	Mesh "asteroid.cms"
+	Texture "asteroid.jpg"
+	Radius   170
+
+	# Figure of 11.52 +/- 0.14 hours from Grav, T. et al. (2003)
+        # "The Short Rotation Period of Nereid", ApJ 591
+	RotationPeriod 11.52	
+
+	EllipticalOrbit
+	{
+	Epoch		2447763.5 # 1989 Aug 25 00:00UT (Voyager encounter)
+	Period		360.13619 # mean
+	SemiMajorAxis	5513400   # mean
+	Eccentricity	0.7512    # mean
+	Inclination	28.385    # at epoch
+	AscendingNode	190.678   # at epoch
+	ArgOfPericenter 17.690    # at epoch
+	MeanAnomaly    	36.056    # at epoch
+	}
+
+	Albedo          0.155
+}
+
+ReferencePoint "Pluto-Charon" "Sol"
+{
+    CustomOrbit "pluto"
+}
+
+"Pluto" "Sol"
+{
+    Texture "pluto-lok.*"
+    SpecularTexture "pluto-lok-spec.*"
+    SpecularColor            [ 0.135 0.12 0.08 ]
+    SpecularPower             9.5
+
+    Radius 1151
+
+    OrbitFrame {
+        EclipticJ2000 { Center "Sol/Pluto-Charon" }
+    }
+
+    BodyFrame {
+        EclipticJ2000 { Center "Sol/Pluto-Charon" }
+    }
+
+    EllipticalOrbit
+    {
+        Period           6.387246
+        SemiMajorAxis    2411      # mass ratio of 0.123
+        Eccentricity     0.0002
+        Inclination      115.602
+        AscendingNode    228.328
+        ArgOfPericenter  47.314
+        MeanAnomaly      93.440
+    }
+
+    RotationPeriod       153.293904
+    Obliquity            115.60
+    EquatorAscendingNode 228.34
+    RotationOffset       320.75
+	
+    Albedo           0.55
+}
+
+AltSurface "limit of knowledge" "Sol/Pluto"
+{
+    Texture "pluto-lok.*"
+    SpecularTexture "pluto-lok-spec.*"
+    SpecularColor            [ 0.135 0.12 0.08 ]
+    SpecularPower             9.5
+}
+
+"Charon" "Sol/Pluto"
+{
+    Texture "charon-lok.*"
+    SpecularTexture "charon-lok-spec.*"
+    SpecularColor            [ 0.135 0.12 0.08 ]
+    SpecularPower             9.5
+    Radius   593
+
+    InfoURL "http://www.nineplanets.org/pluto.html#Charon"
+
+    OrbitFrame {
+        EclipticJ2000 { Center "Sol/Pluto-Charon" }
+    }
+
+    BodyFrame {
+        EclipticJ2000 { Center "Sol/Pluto-Charon" }
+    }
+
+    EllipticalOrbit
+    {
+        Period          6.387246
+        SemiMajorAxis   17188   # mass ratio of 0.123
+        Eccentricity    0.0002
+        Inclination     115.602
+        AscendingNode   228.328
+        ArgOfPericenter 227.314
+        MeanAnomaly     93.440
+    }
+
+    RotationPeriod       153.293904
+    Obliquity            115.9
+    EquatorAscendingNode 227.3
+    RotationOffset       140.4
+	
+    Albedo               0.35
+}
+
+AltSurface "limit of knowledge" "Sol/Pluto/Charon"
+{
+	Texture "charon-lok.*"
+        SpecularTexture "charon-lok-spec.*"
+        SpecularColor            [ 0.135 0.12 0.08 ]
+        SpecularPower             9.5
+}
+
